@@ -25,6 +25,5 @@ wl_input_rules = None
 
 @hook.subscribe.startup_once    # type: ignore (no stubs)
 def autostart():
-    return # for testing purposes
     script = Path.home() / Path(".config/qtile/autostart.sh")
     subprocess.call([script])

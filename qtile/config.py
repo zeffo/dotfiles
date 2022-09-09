@@ -1,4 +1,5 @@
 from qat import keys, groups, layouts, screens
+
 __all__ = ("keys", "groups", "layouts", "screens")
 
 from libqtile import hook
@@ -7,7 +8,7 @@ import subprocess
 
 
 dgroups_key_binder = None
-dgroups_app_rules = []  
+dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
@@ -23,7 +24,8 @@ auto_minimize = True
 wl_input_rules = None
 
 
-@hook.subscribe.startup_once    # type: ignore (no stubs)
+@hook.subscribe.startup_once  # type: ignore (no stubs)
 def autostart():
+    return  # remember to remove after testing
     script = Path.home() / Path(".config/qtile/autostart.sh")
     subprocess.call([script])

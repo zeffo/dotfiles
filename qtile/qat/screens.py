@@ -4,138 +4,139 @@ from libqtile.config import Screen
 from qat.settings import palette
 
 widget_defaults = dict(
-    font="JetBrainsMono Nerd Font",
     fontsize=18,
     background=palette["base"],
-    foreground=palette["surface0"],
+    foreground=palette["teal"],
     padding=10,
 )
 extension_defaults = widget_defaults.copy()
+
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(
-                    highlight_method='text',
-                    this_current_screen_border = palette['yellow'],
-                    active = palette['blue'],
-                    background = palette["base"],
-                    ),
-                widget.TextBox(
-                    text='\uE0B0',
-                    foreground=palette["text"],
-                    background=palette['mantle'],
-                    padding=0,
-                    fontsize = 35,
-                    ),
-                widget.WindowName(
-                    background = palette['mantle'],
-                    format = "{name}",
-                    foreground = palette['surface1'],
-                    empty_group_string = 'Desktop',
-                    width = 320,
-                    ),
-                widget.TextBox(
-                    text='\uE0B0',
-                    background=palette["rosewater"],
-                    foreground=palette['mantle'],
-                    padding=0,
-                    fontsize = 35,
-                    ),
-                widget.Net(
-                    background = palette["lavender"],
-                    foreground = palette['surface1'],
-                    format = "{down} ↓↑ {up}",
-                    ),
-                widget.TextBox(
-                    text='\uE0B0',
-                    background=palette['crust'],
-                    foreground=palette["mauve"],
+                widget.GroupBox(  # type: ignore
+                    highlight_method="text",
+                    this_current_screen_border=palette["teal"],
+                    active=palette["lavender"],
+                    background=palette["mantle"],
+                ),
+                widget.TextBox(  # type: ignore
+                    text="\uE0B0",
+                    foreground=palette["mantle"],
+                    background=palette["base"],
                     padding=0,
                     fontsize=35,
-                    ),
-                widget.Prompt(
-                    prompt = "Run:",
-                    foreground=palette['teal']
-                    ),
-                widget.Spacer(),
-                widget.TextBox(
-                    text='',
-                    foreground=palette['mantle'],
-                    padding=-15,
-                    fontsize=108
-                    ),
-                 widget.TextBox(
-                    text='',
-                    background=palette['mantle'],
-                    foreground=palette['blue'],
-                    padding=-15,
-                    fontsize=108
                 ),
-                widget.CurrentLayoutIcon(
-                        background=palette['blue'],
-                        padding = 0,
-                        scale = 0.5,
-                        ),
-                widget.CurrentLayout(
-                    background=palette['blue'],
+                widget.WindowName(  # type: ignore
+                    background=palette["base"],
+                    format="{name}",
+                    foreground=palette["teal"],
+                    empty_group_string="Desktop",
+                    width=320,
                 ),
-                widget.TextBox(
-                    text='',
-                    background=palette['blue'],
-                    foreground=palette['pink'],
-                    padding=-16,
-                    fontsize=108
-                    ),
-                widget.CPU(
-                    background=palette['pink'],
-                    format = '  {load_percent}%'
-                    ),
-                widget.TextBox(
-                    text='',
-                    background=palette['pink'],
-                    foreground=palette['peach'],
-                    padding=-16,
-                    fontsize=108
-                    ),
-                widget.Memory(
-                    background=palette['peach'],
-                    format='  {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
-                    measure_mem='G'
-                        ),
-                widget.TextBox(
-                    text='',
-                    background=palette['peach'],
-                    foreground=palette['green'],
-                    padding=-15,
-                    fontsize=108
-                ),
-                widget.TextBox(
-                    text='墳 ',
-                    background=palette['green'],
+                widget.TextBox(  # type: ignore
+                    text="\uE0B0",
+                    background=palette["teal"],
+                    foreground=palette["base"],
                     padding=0,
-                    ),
-                widget.PulseVolume(
-                    background=palette['green'],
-                    ),
-                widget.TextBox(
-                    text='',
-                    background=palette['green'],
-                    foreground=palette['yellow'],
-                    padding=-16,
-                    fontsize=108
-                    ),
-                widget.Clock(
-                        format='  %I:%M %p',
-                        background=palette['yellow'],
-                        ),
-                widget.Systray(
-                    icon_size = 30
-                        ),
+                    fontsize=35,
+                ),
+                widget.Net(  # type: ignore
+                    background=palette["teal"],
+                    foreground=palette["crust"],
+                    format="{down} ↓↑ {up}",
+                ),
+                widget.TextBox(  # type: ignore
+                    text="\uE0B0",
+                    background=palette["base"],
+                    foreground=palette["teal"],
+                    padding=0,
+                    fontsize=35,
+                ),
+                widget.Prompt(  # type: ignore
+                    prompt="Run:",
+                    foreground=palette["teal"],
+                    background=palette["base"],
+                ),
+                widget.Spacer(background=palette["base"]),  # type: ignore
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["base"],
+                    foreground=palette["blue"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.CurrentLayoutIcon(  # type: ignore
+                    background=palette["blue"],
+                    padding=0,
+                    scale=0.5,
+                ),
+                widget.CurrentLayout(  # type: ignore
+                    background=palette["blue"],
+                ),
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["blue"],
+                    foreground=palette["pink"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.CPU(  # type: ignore
+                    background=palette["pink"], format="  {load_percent}%"
+                ),
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["pink"],
+                    foreground=palette["peach"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.Memory(  # type: ignore
+                    background=palette["peach"],
+                    format="  {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}",
+                    measure_mem="G",
+                ),
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["peach"],
+                    foreground=palette["green"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.TextBox(  # type: ignore
+                    text="墳 ",
+                    background=palette["green"],
+                    padding=0,
+                ),
+                widget.PulseVolume(  # type: ignore
+                    background=palette["green"],
+                ),
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["green"],
+                    foreground=palette["mauve"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.Clock(  # type: ignore
+                    format="  %I:%M %p",
+                    background=palette["mauve"],
+                ),
+                widget.TextBox(  # type: ignore
+                    text="",
+                    background=palette["mauve"],
+                    foreground=palette["base"],
+                    padding=-17,
+                    fontsize=108,
+                ),
+                widget.Systray(  # type: ignore
+                    icon_size=30, background=palette["base"]
+                ),
             ],
             39,
-            margin = [9, 9, 9, 9],
+            margin=[9, 9, 9, 9],
         ),
     ),
 ]

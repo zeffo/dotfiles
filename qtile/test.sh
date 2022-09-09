@@ -1,0 +1,1 @@
+./xephyr.sh -c ~/.config/qtile/config.py

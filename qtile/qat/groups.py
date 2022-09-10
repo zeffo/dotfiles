@@ -1,11 +1,11 @@
 from libqtile.config import Group, Key
 from libqtile.lazy import lazy
 
-from qat import keys
+from qat.keys import keys
 from qat.settings import mod
 
 layout = "monadthreecol"
-workspaces: list[str | Group] = ["HOME", "WEB", "DEV", "DSC"]
+workspaces: list[str | Group] = ["HOME", "WEB", "DEV", "DSC", "SYS", "ETC"]
 
 groups: list[Group] = []
 
@@ -29,7 +29,7 @@ for i, ws in enumerate(workspaces):
             Key(
                 [mod, "shift"],
                 i,
-                lazy.window.togroup(ws.name, switch_group=True),
+                lazy.window.togroup(ws.name, switch_group=False),   # set switch_group to True to switch and move
                 desc="Switch to & move focused window to group {}".format(ws.name),
             ),
         ]

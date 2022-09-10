@@ -6,6 +6,6 @@ palette: PaletteType = (
 
 terminal: str = "alacritty"  # Default terminal
 mod: str = "mod4"  # Mod (super) key
-wmname: str = "Qatppuccin"  # WM Name
+wmname: str = "Qat | Aman"  # WM Name
 
 __all__ = ("terminal", "mod", "wmname", "palette")

@@ -1,6 +1,4 @@
-from qat import keys, groups, layouts, screens
-
-__all__ = ("keys", "groups", "layouts", "screens")
+from qat import *
 
 from libqtile import hook
 from pathlib import Path
@@ -26,6 +24,5 @@ wl_input_rules = None
 
 @hook.subscribe.startup_once  # type: ignore (no stubs)
 def autostart():
-    return  # remember to remove after testing
     script = Path.home() / Path(".config/qtile/autostart.sh")
     subprocess.call([script])

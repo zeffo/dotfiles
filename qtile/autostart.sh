@@ -7,4 +7,4 @@ $nfetch &    # Alacritty with Neofetch (Cosmetic)
 
 picom -b # Compositor (for transparency)
 
-
+# systemctl restart bluetooth.service # restart bluetooth because it f**king sucks

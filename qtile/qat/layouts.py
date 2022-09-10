@@ -4,9 +4,9 @@ from libqtile.config import Match
 from qat.settings import palette
 
 
-settings = {"margin": 10, "border_focus": palette["sky"]}
+settings = {"margin": 20, "border_focus": palette["pink"]}
 
-layouts = [MonadThreeCol(**settings), Tile(), Matrix(), Floating()]
+layouts = [MonadThreeCol(**settings), Tile(**settings), Matrix(**settings), Floating()]
 
 floating_layout = Floating(
     float_rules=[

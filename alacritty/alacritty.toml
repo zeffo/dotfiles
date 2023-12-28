@@ -1,0 +1,14 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+
+[font]
+normal = { family = "UbuntuMono Nerd Font", style = "Regular" }
+size = 12
+
+[window]
+padding = { x=10, y=10 }
+opacity = 0.9
+
+

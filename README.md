@@ -17,3 +17,10 @@ Swaync Widget:
 
 Swaync Notification:
 ![Swaync Notification](./assets/notification.png)
+
+
+## Credits
+
+Thanks to @rickshawala for introducing me to hyprland!
+
+

@@ -1,4 +1,4 @@
-(defpoll uptime :interval "1s" "scripts/get_uptime")
+(defpoll uptime :interval "1s" "uptime -p | sed 's/up //g'")
 
 
 
@@ -36,14 +36,14 @@
 
 (defwidget powermenu-lockscreen-button []
           (powermenu-button :label ""
-                            :onclick "scripts/lockscreen"
+                            :onclick "swaylock &"
                             :class "powermenu-lockscreen-button"
           )
 )
 
 (defwidget powermenu-logout-button []
           (powermenu-button :label "󰍃"
-                            :onclick "scripts/logout"
+                            :onclick "hyprctl dispatch exit"
                             :class "powermenu-logout-button"
           )
 )

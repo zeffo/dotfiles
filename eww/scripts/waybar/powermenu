@@ -3,10 +3,5 @@
 
 window="powermenu-window"
 
-current_info=$(eww windows | grep "$window")
+eww open --toggle $window
 
-if [[ $current_info == "*$window" ]]; then
-	eww close $window
-else
-	eww open $window
-fi

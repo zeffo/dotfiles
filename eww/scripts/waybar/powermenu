@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-
-window="powermenu-window"
-
-eww open --toggle $window
-

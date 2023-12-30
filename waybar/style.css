@@ -11,7 +11,6 @@ window#waybar {
 }
 
 #workspaces {
-    /* background-color: @mantle; */
     background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender);
     margin-right: 20px;
     padding: 7px;
@@ -67,81 +66,43 @@ window#waybar {
 #cpu{
     background-color: @pink;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #temperature{
     background-color: @mauve;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #memory{
     background-color: @red;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
-
-/* #idle_inhibitor { */
-/*     background-color: @peach; */
-/*     padding: 0 22px 0 15px; */
-/*     margin: 0 0 0 7px; */
-/*     border: 2px solid @base; */
-/* } */
-
-/* #network { */
-/*     background-color: @yellow; */
-/*     padding: 0 15px; */
-/*     margin: 0 0 0 7px; */
-/*     border: 2px solid @base; */
-/* } */
 
 #mpris {
     background-color: @maroon;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
     min-width: 100px;
-    border-bottom: 7px solid @base;
 }
 
 #cava {
     background-color: @peach;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #pulseaudio {
     background-color: @yellow;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #bluetooth {
     background-color: @green;
     padding: 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #tray {
     min-width: 120px;
     background-color: @teal;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
     padding: 0 15px; 
-    border-bottom: 7px solid @base;
 }
 
 #tray menu {
@@ -161,30 +122,25 @@ window#waybar {
 #clock {
     background-color: @sky;
     padding: 0 15px; 
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #custom-weather {
     background-color: @sapphire;
     padding: 0 22px 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #custom-swaync {
     background-color: @blue;
     padding: 0 22px 0 15px;
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 7px solid @base;
 }
 
 #custom-powermenu {
     background-color: @lavender;
     padding: 0 20px 0 15px;
+
+}
+
+.modules-right > * > * {
     margin: 0 0 0 7px;
     border: 2px solid @base;
     border-bottom: 7px solid @base;

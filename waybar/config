@@ -183,7 +183,7 @@
         "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}\u00b0C \uf2c7",
-        "format": "GPU {temperatureC}\u00b0C \uf2c9"
+        "format": "{temperatureC}\u00b0C \uf2c9"
     },
     "tray": {
         "icon-size": 21,

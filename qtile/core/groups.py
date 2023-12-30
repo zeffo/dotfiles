@@ -5,7 +5,7 @@ from .keys import keys
 from .settings import mod
 
 layout = "tile"
-workspaces: list[str | Group] = ["HOME", "WEB", "DEV", "DSC", "SYS", "ETC"]
+workspaces: list[str | Group] = ["HOME", "WEB", "DEV", "DSC", "SPT", "SYS"]
 
 groups: list[Group] = []
 

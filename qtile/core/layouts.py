@@ -29,5 +29,5 @@ floating_layout = floating.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    **settings
+    border_width=0,
 )

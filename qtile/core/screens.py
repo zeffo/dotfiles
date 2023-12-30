@@ -25,6 +25,7 @@ class Builder:
                 palette.yellow,
                 palette.green,
                 palette.teal,
+                palette.sky,
                 palette.sapphire,
                 palette.blue,
                 palette.lavender,
@@ -143,7 +144,8 @@ bar0.add_widget(
     )
 )
 
-bar0.add_widget(widget.Clock(format="◷ %I:%M %p"))
+bar0.add_widget(widget.Clock(format="🕑 %I:%M %p"))
+bar0.add_widget(widget.Clock(format="%A, %-d %B %Y"))
 bar0.add_widget(widget.Systray())
 bar0.add_widget(widget.QuickExit(default_text="⏻  ", fontsize=22), append_divider=False)
 

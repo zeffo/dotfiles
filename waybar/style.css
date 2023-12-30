@@ -1,0 +1,197 @@
+@import "./mocha.css";
+
+* {
+    font-family: "SpaceMono Nerd Font";
+	  border-radius: 10px;
+}
+
+window#waybar {
+  background-color: transparent; 
+  color: @text;
+}
+
+#workspaces {
+    /* background-color: @mantle; */
+    background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender);
+    margin-right: 20px;
+    padding: 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#workspaces button {
+    padding: 0 13px 0 6px;
+    background: @crust;
+    color: @mauve;
+    margin: 0.25em;
+    font-size: 20px;
+    border: 2px solid @base;
+}
+
+#workspaces button.empty {
+    color: @overlay0;
+    background-color: @crust;
+}
+
+#workspaces button.visible {
+    color: @pink;
+    background-color: @crust;
+}
+
+#workspaces button.active {
+    color: @crust;
+    border: 2px solid @base;
+    background: transparent;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    border-radius: 1em;
+    color: @text;
+}
+
+#workspaces button:hover {
+    color: @crust;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+#window {
+    color: @pink;
+    background-color: @mantle;
+    padding: 0 15px;
+}
+
+
+#cpu{
+    background-color: @pink;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#temperature{
+    background-color: @mauve;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#memory{
+    background-color: @red;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+/* #idle_inhibitor { */
+/*     background-color: @peach; */
+/*     padding: 0 22px 0 15px; */
+/*     margin: 0 0 0 7px; */
+/*     border: 2px solid @base; */
+/* } */
+
+/* #network { */
+/*     background-color: @yellow; */
+/*     padding: 0 15px; */
+/*     margin: 0 0 0 7px; */
+/*     border: 2px solid @base; */
+/* } */
+
+#mpris {
+    background-color: @maroon;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    min-width: 100px;
+    border-bottom: 7px solid @base;
+}
+
+#cava {
+    background-color: @peach;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#pulseaudio {
+    background-color: @yellow;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#bluetooth {
+    background-color: @green;
+    padding: 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#tray {
+    min-width: 120px;
+    background-color: @teal;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    padding: 0 15px; 
+    border-bottom: 7px solid @base;
+}
+
+#tray menu {
+    background-color: @base;
+    color: @text;
+}
+
+#tray menu > *:hover {
+    background-color: @pink;
+    color: @base;
+}
+
+#tray > .needs-attention {
+    border: 2px solid @red;
+}
+
+#clock {
+    background-color: @sky;
+    padding: 0 15px; 
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#custom-weather {
+    background-color: @sapphire;
+    padding: 0 22px 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#custom-swaync {
+    background-color: @blue;
+    padding: 0 22px 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+#custom-powermenu {
+    background-color: @lavender;
+    padding: 0 20px 0 15px;
+    margin: 0 0 0 7px;
+    border: 2px solid @base;
+    border-bottom: 7px solid @base;
+}
+
+.modules-right {
+    color: @base;
+    font-size: 17px;
+}
+

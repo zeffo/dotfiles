@@ -1,0 +1,61 @@
+@import '/home/aman/.config/wofi/mocha.css';
+
+window {
+    margin: 0px;
+    background-color: @base;
+    border-radius: 30px;
+    border: 4px solid @crust;
+    border-bottom: 10px solid @crust;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: @crust;
+    background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender);
+    border-radius: 30px;
+    font-family: SpaceMono Nerd Font;
+    box-shadow: none;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: @base;
+    border-radius: 30px;
+}
+
+#outer-box {
+    margin: 15px;
+    border: none;
+    background-color: @base; 
+    background-image: @surface0; 
+    border-radius: 30px;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @text; 
+    font-family: SpaceMono Nerd Font;
+} 
+
+#entry:selected {
+    background-color: @base; 
+    outline: none;
+}
+
+#entry:selected * {
+    background-color: transparent; 
+    outline: none;
+    color: @pink;
+    font-size: 17;
+    font-weight: bold;
+    font-style: italic;
+
+}

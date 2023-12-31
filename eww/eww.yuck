@@ -80,33 +80,6 @@
 )
 
 
-(defwidget close-button [onclick]
-           (button :class "close-button"
-                   :onclick onclick
-                   ""
-           )
-)
-
-(defwidget titlebar [?title close-button-onclick]
-           (box :class "titlebar"
-                :orientation "h"
-                :space-evenly true
-                (box :class "titlebar-title"
-                     :orientation "h"
-                     :space-evenly false
-                     :halign "start"
-                     title
-                )
-                (box :class "titlebar-buttons-box"
-                     :orientation "h"
-                     :space-evenly false
-                     :halign "end"
-                     (close-button :onclick "${close-button-onclick}")
-                )
-           )
-)
-
-
 (defwindow powermenu-window
            :monitor 0
            :geometry (geometry :x "10px"

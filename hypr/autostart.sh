@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 
+hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24
+
 waybar &
 blueman-applet &
 spotify-launcher &

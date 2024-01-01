@@ -22,7 +22,7 @@ swww img ~/.config/hypr/wallpapers/tree.png -o HDMI-A-1
 # eww
 eww daemon &
 
-obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check &
+# obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check &
 
 
 

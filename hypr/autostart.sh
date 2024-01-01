@@ -14,15 +14,23 @@ pkill swaync
 swaync &
 
 # swww
-swww init &
-swww img ~/.config/hypr/wallpapers/blahaj.png -o DP-2
-swww img ~/.config/hypr/wallpapers/tree.png -o HDMI-A-1
+swww kill
+swww init
+swww img ~/.config/hypr/wallpapers/blahaj.png -o DP-2 --transition-fps 255 
+wallpapers=("pixelmountain.gif" "pixeltrain.gif") 
+size=${#wallpapers[@]}
+index=$(($RANDOM % $size))
+swww img ~/.config/hypr/wallpapers/${wallpapers[$index]} -o HDMI-A-1 --transition-fps 255
 
 
 # eww
 eww daemon &
 
 # obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check &
+#
+#
+
+
 
 
 

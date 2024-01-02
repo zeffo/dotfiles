@@ -2,11 +2,11 @@
 !*/
 
 !.gitignore
-!alacritty/
-!assets/
-!eww/
-!hypr/
-!swaync/
-!waybar/
-!wofi/
-!bottom/
+!alacritty/**
+!assets/**
+!eww/**
+!hypr/**
+!swaync/**
+!waybar/**
+!wofi/**
+!bottom/**

@@ -1,0 +1,12 @@
+*
+!*/
+
+!.gitignore
+!alacritty/
+!assets/
+!eww/
+!hypr/
+!swaync/
+!waybar/
+!wofi/
+!bottom/

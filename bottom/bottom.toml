@@ -80,6 +80,8 @@
 # How much data is stored at once in terms of time.
 #retention = "10m"
 
+enable_gpu = true
+
 # These are flags around the process widget.
 
 #[processes]

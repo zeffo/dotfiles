@@ -9,6 +9,6 @@ size = 14
 
 [window]
 padding = { x=10, y=10 }
-opacity = 0.9
+opacity = 0.98
 
 

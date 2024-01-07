@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 
-hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24
 
 waybar &
+hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24
 blueman-applet &
-spotify-launcher &
-
 
 # swaync
 killall swaync
@@ -22,15 +20,10 @@ size=${#wallpapers[@]}
 index=$(($RANDOM % $size))
 swww img ~/.config/hypr/wallpapers/${wallpapers[$index]} -o HDMI-A-1 --transition-fps 255
 
-
 # eww
 eww daemon &
 
-# obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check &
-#
-#
-
-
-
+# rgb
+openrgb --startminimized -p MAIN0 &
 
 

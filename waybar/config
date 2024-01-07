@@ -29,10 +29,11 @@
             "3": "\uf121",
             "4": "\uf1bc",
             "5": "\uf075",
+            "6": "\uf004",
             "default": "\uf111"
         },
         "persistent-workspaces": {
-            "*": 5
+            "*": 6
         }
     },
     "custom/weather": {

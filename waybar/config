@@ -2,7 +2,9 @@
     "layer": "top",
     "position": "top",
     "output": "DP-2",
-    "margin": "10",
+    "margin-right": 10,
+    "margin-left": 10,
+    "margin-top": 10,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -196,7 +198,5 @@
         "height": 30,
         "width": 30,
         "icon": true
-    }
-}     "icon": true
     }
 }

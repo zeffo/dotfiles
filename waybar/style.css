@@ -12,27 +12,37 @@ window#waybar {
 
 #workspaces {
     background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender);
-    margin-right: 20px;
-    padding: 7px;
+    padding: 2px 0.25em;
     border: 2px solid @base;
-    border-bottom: 7px solid @base;
+    border-bottom: 6px solid @base;
 }
 
 #workspaces button {
-    padding: 0 14px 0 6px;
+    /* padding: 0 14px 0 6px; */
+    padding: 0 10px 0 4px;
     background: @crust;
     color: @mauve;
     margin: 0.25em;
-    font-size: 20px;
+    font-size: 17px;
     border: 2px solid @base;
 }
-#workspaces button:nth-child(4) {
-    padding: 0 12px 0 6px;
+
+#workspaces button:nth-child(2) {
+    padding-right: 11px;
 }
 
 #workspaces button:nth-child(3) {
-    padding: 0 15px 0 6px;
+    padding-right: 11px;
 }
+
+#workspaces button:nth-child(4) {
+    padding: 0 9px 0 4px;
+}
+
+#workspaces button:nth-child(6) {
+    padding-right: 11px;
+}
+
 
 #workspaces button.empty {
     color: @overlay0;
@@ -150,7 +160,7 @@ window#waybar {
 .modules-right > * > * {
     margin: 0 0 0 7px;
     border: 2px solid @base;
-    border-bottom: 7px solid @base;
+    border-bottom: 6px solid @base;
 }
 
 .modules-right {

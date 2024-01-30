@@ -14,10 +14,12 @@ Wofi:<br>
 ![Wofi](./assets/wofi.png)
 Eww Powermenu Widget:<br>
 ![Eww Powermenu](./assets/eww.png)
-<br>
+
+
 Swaync Widget:<br>
 ![Swaync Widget](./assets/swaync.png)
-<br>
+
+
 Swaync Notification:<br>
 ![Swaync Notification](./assets/notification.png)
 

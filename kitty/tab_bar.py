@@ -43,8 +43,8 @@ colors = [Color(*getattr(flavor, field).rgb, alpha=2) for field in fields]
 
 
 powerline_symbols = {
-    "slanted": ("", "╱"),
-    "round": ("", ""),
+    "slanted": ("", "╱", ""),
+    "round": ("", "", ""),
 }
 
 salt = random.randint(0, len(colors) - 1)
@@ -73,8 +73,8 @@ def draw_tab(
         next_tab_bg = default_bg
         needs_soft_separator = False
 
-    separator_symbol, soft_separator_symbol = powerline_symbols.get(
-        draw_data.powerline_style, ("", "")
+    separator_symbol, soft_separator_symbol, back_separator_symbol = (
+        powerline_symbols.get(draw_data.powerline_style, ("", "", ""))
     )
     min_title_length = 1 + 2
     start_draw = 2
@@ -83,6 +83,13 @@ def draw_tab(
         screen.cursor.bg = tab_bg
         screen.draw(" ")
         start_draw = 1
+
+    if (
+        tab.is_active or getattr(extra_data.prev_tab, "is_active", False)
+    ) and start_draw != 1:
+        screen.cursor.bg = color_as_int(opts.tab_bar_background)
+        screen.cursor.fg = tab_bg
+        screen.draw(back_separator_symbol)
 
     screen.cursor.bg = tab_bg
     if min_title_length >= max_tab_length:
@@ -93,11 +100,12 @@ def draw_tab(
         if extra > 0 and extra + 1 < screen.cursor.x:
             screen.cursor.x -= extra + 1
             screen.draw("…")
-
     if not needs_soft_separator:
         screen.draw(" ")
         screen.cursor.fg = tab_bg
         screen.cursor.bg = next_tab_bg
+        if tab.is_active or getattr(extra_data.next_tab, "is_active", False):
+            screen.cursor.bg = color_as_int(opts.tab_bar_background)
         screen.draw(separator_symbol)
     else:
         prev_fg = screen.cursor.fg
@@ -110,7 +118,6 @@ def draw_tab(
                 screen.cursor.fg = default_bg
         screen.draw(f" {soft_separator_symbol}")
         screen.cursor.fg = prev_fg
-
     end = screen.cursor.x
     if end < screen.columns:
         screen.draw(" ")

@@ -95,13 +95,15 @@ def draw_tab(
     if min_title_length >= max_tab_length:
         screen.draw("…")
     else:
+        screen.draw(" ")
         draw_title(draw_data, screen, tab, index, max_tab_length)
+        screen.draw(" ")
         extra = screen.cursor.x + start_draw - before - max_tab_length
         if extra > 0 and extra + 1 < screen.cursor.x:
             screen.cursor.x -= extra + 1
             screen.draw("…")
     if not needs_soft_separator:
-        screen.draw(" ")
+        # screen.draw(" ")
         screen.cursor.fg = tab_bg
         screen.cursor.bg = next_tab_bg
         if tab.is_active or getattr(extra_data.next_tab, "is_active", False):

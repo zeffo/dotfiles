@@ -60,21 +60,18 @@ def draw_tab(
     is_last: bool,
     extra_data: ExtraData,
 ) -> int:
-    index = index - 1 + salt
-    cur_color = colors[index % len(colors)]
+    idx = index - 1 + salt
+    cur_color = colors[idx % len(colors)]
     tab_bg = cai(cur_color)
-    tab_fg = screen.cursor.fg
+    tab_bar_background = color_as_int(opts.tab_bar_background)
     default_bg = as_rgb(int(draw_data.default_bg))
     if extra_data.next_tab:
-        # next_tab_bg = as_rgb(draw_data.tab_bg(extra_data.next_tab))
-        next_tab_bg = cai(colors[(index + 1) % len(colors)])
-        needs_soft_separator = next_tab_bg == tab_bg
+        next_tab_bg = cai(colors[(idx + 1) % len(colors)])
     else:
         next_tab_bg = default_bg
-        needs_soft_separator = False
 
-    separator_symbol, soft_separator_symbol, back_separator_symbol = (
-        powerline_symbols.get(draw_data.powerline_style, ("", "", ""))
+    separator_symbol, _, back_separator_symbol = powerline_symbols.get(
+        draw_data.powerline_style, ("", "", "")
     )
     min_title_length = 1 + 2
     start_draw = 2
@@ -87,7 +84,7 @@ def draw_tab(
     if (
         tab.is_active or getattr(extra_data.prev_tab, "is_active", False)
     ) and start_draw != 1:
-        screen.cursor.bg = color_as_int(opts.tab_bar_background)
+        screen.cursor.bg = tab_bar_background
         screen.cursor.fg = tab_bg
         screen.draw(back_separator_symbol)
 
@@ -95,31 +92,22 @@ def draw_tab(
     if min_title_length >= max_tab_length:
         screen.draw("…")
     else:
+        if tab.has_activity_since_last_focus and getattr(
+            extra_data.prev_tab, "is_active", False
+        ):
+            screen.cursor.fg = tab_bar_background
         screen.draw(" ")
-        draw_title(draw_data, screen, tab, index, max_tab_length)
+        draw_title(draw_data, screen, tab, index - 1, max_tab_length)
         screen.draw(" ")
         extra = screen.cursor.x + start_draw - before - max_tab_length
         if extra > 0 and extra + 1 < screen.cursor.x:
             screen.cursor.x -= extra + 1
             screen.draw("…")
-    if not needs_soft_separator:
-        # screen.draw(" ")
         screen.cursor.fg = tab_bg
         screen.cursor.bg = next_tab_bg
         if tab.is_active or getattr(extra_data.next_tab, "is_active", False):
-            screen.cursor.bg = color_as_int(opts.tab_bar_background)
+            screen.cursor.bg = tab_bar_background
         screen.draw(separator_symbol)
-    else:
-        prev_fg = screen.cursor.fg
-        if tab_bg == tab_fg:
-            screen.cursor.fg = default_bg
-        elif tab_bg != default_bg:
-            c1 = draw_data.inactive_bg.contrast(draw_data.default_bg)
-            c2 = draw_data.inactive_bg.contrast(draw_data.inactive_fg)
-            if c1 < c2:
-                screen.cursor.fg = default_bg
-        screen.draw(f" {soft_separator_symbol}")
-        screen.cursor.fg = prev_fg
     end = screen.cursor.x
     if end < screen.columns:
         screen.draw(" ")

@@ -50,8 +50,8 @@ window#waybar {
 }
 
 #workspaces button.visible {
-    color: @pink;
     background-color: @crust;
+    color: @pink;
 }
 
 #workspaces button.active {
@@ -125,11 +125,6 @@ window#waybar {
 #tray menu {
     background-color: @base;
     color: @text;
-}
-
-#tray menu > *:hover {
-    background-color: @pink;
-    color: @base;
 }
 
 #tray > .needs-attention {

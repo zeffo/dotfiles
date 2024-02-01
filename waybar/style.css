@@ -127,6 +127,11 @@ window#waybar {
     color: @text;
 }
 
+#tray menu > *:hover {
+    background-color: @pink;
+    color: @base;
+}
+
 #tray > .needs-attention {
     border: 2px solid @red;
 }

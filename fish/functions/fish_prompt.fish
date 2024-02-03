@@ -21,24 +21,22 @@ function fish_prompt
     # echo -n '╰─ '
     # # set_color f5c2e7
     set_color $fish_color_pink
-    echo -n ""
+    echo -n "╭─"
     set_color -o --background $fish_color_pink
     set_color $fish_color_crust
-    echo -n " "
+    echo -n $USER
+    set_color normal
     set_color --background $fish_color_mauve
     set_color $fish_color_pink
     echo -n " " 
     set_color $fish_color_base
-    echo -n $USER  
+    echo -n (string replace $HOME '~' (pwd)) 
     set_color normal
     set_color $fish_color_mauve
-    set_color --background $fish_color_teal
-    echo -n " " 
-    set_color $fish_color_surface0
-    echo -n (prompt_pwd)
-    set_color normal 
-    set_color $fish_color_teal
-    echo -n " " 
+    echo  " " 
+    set_color $fish_color_base
+    set_color $fish_color_pink
+    echo -n "╰─  "
 
 end
 

@@ -20,7 +20,7 @@ function fish_prompt
     # # echo "│"
     # echo -n '╰─ '
     # # set_color f5c2e7
-    set_color $fish_color_teal
+    set_color $fish_color_mauve
     echo -n "╭─"
     set_color $fish_color_pink
     echo -n ""
@@ -37,7 +37,7 @@ function fish_prompt
     set_color $fish_color_mauve
     echo  " " 
     set_color $fish_color_base
-    set_color $fish_color_teal
+    set_color $fish_color_mauve
     echo -n "╰─"
     set_color $fish_color_pink
     echo -n "  "

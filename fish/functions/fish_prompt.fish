@@ -1,3 +1,6 @@
+# DRY programmers should look away!
+
+
 function fish_prompt
     set_color $fish_color_mauve
     echo -n "╭─"

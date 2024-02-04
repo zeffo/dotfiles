@@ -53,8 +53,8 @@
     },
     "custom/powermenu": {
         "format": "\uf011",
-        "on-click": "eww open --toggle powermenu-window",
-        "on-click-right": "eww open --toggle powermenu-window",
+        "on-click": "sleep 0.1 && eww open --toggle powermenu-window",
+        "on-click-right": "sleep 0.1 && eww open --toggle powermenu-window",
         "tooltip": false
     },
     "custom/swaync": {

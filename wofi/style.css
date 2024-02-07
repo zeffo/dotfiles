@@ -12,7 +12,7 @@ window {
     margin: 5px;
     border: none;
     color: @crust;
-    background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender);
+    background: linear-gradient(0.25turn, @pink, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender, @mauve);
     border-radius: 30px;
     font-family: SpaceMono Nerd Font;
     box-shadow: none;

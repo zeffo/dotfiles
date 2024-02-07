@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "output": "DP-2",
-    "margin-right": 20,
-    "margin-left": 20,
-    "margin-top": 20,
+    "margin-right": 15,
+    "margin-left": 15,
+    "margin-top": 15,
     "modules-left": [
         "hyprland/workspaces"
     ],

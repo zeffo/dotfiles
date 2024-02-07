@@ -1,10 +1,10 @@
 {
     "layer": "top",
     "position": "top",
-    "output": "DP-2",
-    "margin-right": 20,
-    "margin-left": 20,
-    "margin-top": 20,
+    "output": "eDP-1",
+    "margin-right": 10,
+    "margin-left": 10,
+    "margin-top": 10,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -16,10 +16,12 @@
         "mpris",
         "cava",
         "pulseaudio",
-        "bluetooth",
+        "network",
         "tray",
         "clock",
         "custom/weather",
+        "backlight",
+        "battery",
         "custom/swaync",
         "custom/powermenu"
     ],
@@ -65,13 +67,13 @@
     },
     "network": {
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) \uf1eb",
+        "format-wifi": "{essid} \uf1eb",
         "format-ethernet": "{ipaddr}/{cidr} \udb80\ude97",
-        "format-disconnected": "Disconnected!",
+        "format-disconnected": "dc'd",
         "tooltip-format": "{ifname} via {gwaddr} \udb80\ude97",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) \uf1eb",
         "tooltip-format-ethernet": "{bandwidthTotalBytes} {ipaddr}/{cidr} \udb80\ude97",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format-disconnected": "dc'd"
     },
     "bluetooth": {
         "format": "\uf294 {status}",
@@ -182,8 +184,22 @@
             "Easy Effects Sink"
         ]
     },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+    },
     "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}\u00b0C \uf2c7",
         "format": "{temperatureC}\u00b0C \uf2c9"

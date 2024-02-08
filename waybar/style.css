@@ -112,13 +112,18 @@ window#waybar {
 }
 
 #bluetooth {
+    background-color: @teal;
+    padding: 0 15px;
+}
+
+#network {
     background-color: @sky;
     padding: 0 15px;
 }
 
 #tray {
     min-width: 120px;
-    background-color: @teal;
+    background-color: @sapphire;
     padding: 0 15px; 
 }
 
@@ -137,7 +142,7 @@ window#waybar {
 }
 
 #clock {
-    background-color: @sapphire;
+    background-color: @blue;
     padding: 0 15px; 
 }
 

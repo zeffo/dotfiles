@@ -17,9 +17,9 @@
         "cava",
         "pulseaudio",
         "bluetooth",
+        "network",
         "tray",
         "clock",
-        "custom/weather",
         "custom/swaync",
         "custom/powermenu"
     ],
@@ -36,19 +36,6 @@
         },
         "persistent-workspaces": {
             "*": 6
-        }
-    },
-    "custom/weather": {
-        "format": "{}",
-        "tooltip": true,
-        "exec": "/home/aman/.config/waybar/get_weather.sh Pune+India",
-        "return-type": "json",
-        "interval": 900
-    },
-    "hyprland/window": {
-        "format": "> {}",
-        "rewrite": {
-            "(.*) \u2014 Mozilla Firefox": "\uf269  $1"
         }
     },
     "custom/powermenu": {
@@ -82,13 +69,6 @@
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "blueman-applet"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "\uf06e",
-            "deactivated": "\uf070"
-        }
     },
     "mpris": {
         "interval": 1,
@@ -191,12 +171,5 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
-    },
-    "user": {
-        "format": "{user} (up {work_d} days \u2191)",
-        "interval": 60,
-        "height": 30,
-        "width": 30,
-        "icon": true
     }
 }

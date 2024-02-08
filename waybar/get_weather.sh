@@ -14,4 +14,4 @@ do
     fi
     sleep 2
 done
-echo "{\"text\":\"⛄ No Weather Data\", \"tooltip\":\"Couldn't get the weather :3\"}"
+echo "{\"text\":\"⛄\", \"tooltip\":\"Couldn't get the weather :3\"}"

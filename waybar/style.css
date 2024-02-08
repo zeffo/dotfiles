@@ -81,49 +81,49 @@ window#waybar {
 
 
 #cpu{
-    background-color: @rosewater;
-    padding: 0 15px;
-}
-
-#temperature{
     background-color: @flamingo;
     padding: 0 15px;
 }
 
-#memory{
+#temperature{
     background-color: @pink;
     padding: 0 15px;
 }
 
-#mpris {
+#memory{
     background-color: @red;
+    padding: 0 15px;
+}
+
+#mpris {
+    background-color: @maroon;
     padding: 0 15px;
     min-width: 100px;
 }
 
 #cava {
-    background-color: @maroon;
-    padding: 0 15px;
-}
-
-#pulseaudio {
     background-color: @peach;
     padding: 0 15px;
 }
 
-#bluetooth {
+#pulseaudio {
     background-color: @yellow;
     padding: 0 15px;
 }
 
+#bluetooth {
+    background-color: @green;
+    padding: 0 15px;
+}
+
 #network {
-    background-color: @yellow;
+    background-color: @green;
     padding: 0 22px 0 15px;
 }
 
 #tray {
-    min-width: 120px;
-    background-color: @green;
+    min-width: 80px;
+    background-color: @teal;
     padding: 0 15px; 
 }
 
@@ -142,12 +142,12 @@ window#waybar {
 }
 
 #clock {
-    background-color: @teal;
+    background-color: @sky;
     padding: 0 5px 0 10px;
 }
 
 #custom-weather {
-    background-color: @sky;
+    background-color: @sapphire;
     padding: 0 18px 0 15px;
 }
 

@@ -19,7 +19,6 @@
         "network",
         "tray",
         "clock",
-        "custom/weather",
         "backlight",
         "battery",
         "custom/swaync",
@@ -45,7 +44,8 @@
         "tooltip": true,
         "exec": "/home/aman/.config/waybar/get_weather.sh Pune+India",
         "return-type": "json",
-        "interval": 900
+        "interval": 900,
+        "max-length": 10
     },
     "hyprland/window": {
         "format": "> {}",
@@ -69,11 +69,11 @@
         "format": "{ifname}",
         "format-wifi": "{essid} \uf1eb",
         "format-ethernet": "{ipaddr}/{cidr} \udb80\ude97",
-        "format-disconnected": "dc'd",
+        "format-disconnected": "x\uf1eb",
         "tooltip-format": "{ifname} via {gwaddr} \udb80\ude97",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) \uf1eb",
         "tooltip-format-ethernet": "{bandwidthTotalBytes} {ipaddr}/{cidr} \udb80\ude97",
-        "tooltip-format-disconnected": "dc'd"
+        "tooltip-format-disconnected": "x\uf1eb"
     },
     "bluetooth": {
         "format": "\uf294 {status}",
@@ -104,13 +104,13 @@
         "status-icons": {
             "paused": "\u23f8"
         },
-        "dynamic-len": 30
+        "dynamic-len": 20
     },
     "cava": {
         "cava_config": "/home/aman/.config/cava/config",
         "framerate": 170,
         "autosens": 1,
-        "bars": 10,
+        "bars": 8,
         "source": "auto",
         "stereo": true,
         "reverse": false,
@@ -206,7 +206,7 @@
     },
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 5      
     },
     "user": {
         "format": "{user} (up {work_d} days \u2191)",

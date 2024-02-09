@@ -118,7 +118,7 @@ window#waybar {
 
 #network {
     background-color: @sky;
-    padding: 0 15px;
+    padding: 0 22px 0 15px;
 }
 
 #tray {
@@ -143,13 +143,9 @@ window#waybar {
 
 #clock {
     background-color: @blue;
-    padding: 0 15px; 
+    padding: 0 18px 0 15px; 
 }
 
-#custom-weather {
-    background-color: @blue;
-    padding: 0 22px 0 15px;
-}
 
 #custom-swaync {
     background-color: @lavender;

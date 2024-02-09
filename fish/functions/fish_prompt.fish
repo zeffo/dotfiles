@@ -3,7 +3,7 @@
 
 function fish_prompt
     set_color $fish_color_mauve
-    echo -n "╭─"
+    # echo -n "╭─"
     set_color $fish_color_pink
     echo -n ""
     set_color -o --background $fish_color_pink
@@ -43,7 +43,7 @@ function fish_prompt
     echo ""
     set_color $fish_color_base
     set_color $fish_color_mauve
-    echo -n "╰─"
+    # echo -n "╰─"
     set_color $fish_color_pink
     echo -n "  "
 

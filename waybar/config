@@ -104,7 +104,7 @@
         "status-icons": {
             "paused": "\u23f8"
         },
-        "dynamic-len": 20
+        "dynamic-len": 30
     },
     "cava": {
         "cava_config": "/home/aman/.config/cava/config",

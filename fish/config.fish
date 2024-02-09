@@ -12,6 +12,7 @@ alias ls='eza --icons=always --no-quotes --group-directories-first --hyperlink'
 alias grep='ag'
 alias pdf="termpdf.py"
 alias cat="bat"
+alias spire="spotify_player"
 
 pokeget random --hide-name; echo;
 

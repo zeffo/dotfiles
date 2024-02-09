@@ -21,18 +21,18 @@ window#waybar {
     background-size: 200% auto;
     animation: gradient 10s linear infinite;
     padding: 2px 0.25em;
-    border: 2px solid @base;
-    border-bottom: 6px solid @base;
+    border: 2px solid @crust;
+    border-bottom: 6px solid @crust;
 }
 
 #workspaces button {
     /* padding: 0 14px 0 6px; */
     padding: 0 10px 0 4px;
-    background: @crust;
+    background: @base;
     color: @mauve;
     margin: 0.25em;
     font-size: 17px;
-    border: 2px solid @base;
+    border: 2px solid @crust;
 }
 
 #workspaces button:nth-child(2) {
@@ -54,17 +54,14 @@ window#waybar {
 
 #workspaces button.empty {
     color: @overlay0;
-    background-color: @crust;
 }
 
 #workspaces button.visible {
-    background-color: @crust;
     color: @pink;
 }
 
 #workspaces button.active {
     color: @crust;
-    border: 2px solid @base;
     background: transparent;
 }
 

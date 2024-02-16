@@ -14,7 +14,8 @@ window {
     color: @crust;
     background: linear-gradient(0.25turn, @pink, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender, @mauve);
     border-radius: 30px;
-    font-family: SpaceMono Nerd Font;
+    font-family: Iosevka Pride;
+    font-size: 17px;
     box-shadow: none;
 }
 

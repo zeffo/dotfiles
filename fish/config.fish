@@ -5,6 +5,7 @@ if status is-interactive
     set -x EDITOR nvim
     set -x BAT_THEME Catppuccin-mocha
 
+    alias gitui="gitui -t mocha.ron"
     alias cd="z" 
     alias fox='firefox-developer-edition'
     alias ls='eza --icons=always --no-quotes --group-directories-first --hyperlink'

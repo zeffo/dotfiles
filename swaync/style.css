@@ -34,7 +34,8 @@
 
 .image {
   border: 2px solid @crust;
-  border-radius: 3px;
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {

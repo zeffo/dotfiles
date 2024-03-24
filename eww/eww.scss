@@ -35,10 +35,12 @@
 
 .powermenu-poweroff-button {
     background: linear-gradient(0.25turn, $green, $teal, $sky);
+    padding-right: 10px;
 }
 
 .powermenu-reboot-button {
     background: linear-gradient(0.25turn, $sapphire, $sky, $lavender);
+    padding-right: 10px;
 }
                      // (powermenu-lockscreen-button)
                      // (powermenu-logout-button)

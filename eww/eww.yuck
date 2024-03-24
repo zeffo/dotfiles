@@ -56,7 +56,7 @@
 )
 
 (defwidget powermenu-reboot-button []
-          (powermenu-button :label " "
+          (powermenu-button :label ""
                             :onclick "reboot"
                             :class "powermenu-reboot-button"
           )

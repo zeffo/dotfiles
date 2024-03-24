@@ -24,6 +24,8 @@ swww img ~/.config/hypr/wallpapers/${wallpapers[$index]} -o HDMI-A-1 --transitio
 eww daemon &
 
 # rgb
+sudo modprobe cdc-acm
+prismatik &
 openrgb --startminimized -p MAIN0 &
 
 

@@ -4,8 +4,8 @@ import = [
 
 
 [font]
-normal = { family = "UbuntuMono Nerd Font", style = "Regular" }
-size = 14
+normal = { family = "Iosevka Pride", style="Regular"}
+size = 13 
 
 [window]
 padding = { x=10, y=10 }

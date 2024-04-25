@@ -1,7 +1,7 @@
 @import "./mocha.css";
 
 * {
-    font-family: "SpaceMono Nerd Font";
+    font-family: "Space Mono", "IosevkaPride Nerd Font", monospace;
 	border-radius: 10px;
 }
 
@@ -27,30 +27,18 @@ window#waybar {
 
 #workspaces button {
     /* padding: 0 14px 0 6px; */
-    padding: 0 10px 0 4px;
+    padding: 0 10px 0 2px;
     background: @base;
     color: @mauve;
     margin: 0.25em;
-    font-size: 17px;
+    font-size: 12pt;
     border: 2px solid @crust;
 }
 
-#workspaces button:nth-child(2) {
-    padding-right: 11px;
-}
-
-#workspaces button:nth-child(3) {
-    padding-right: 11px;
-}
 
 #workspaces button:nth-child(4) {
-    padding: 0 9px 0 4px;
+    padding: 0 10px 0 3px;
 }
-
-#workspaces button:nth-child(6) {
-    padding-right: 11px;
-}
-
 
 #workspaces button.empty {
     color: @overlay0;
@@ -171,6 +159,6 @@ window#waybar {
 
 .modules-right {
     color: @base;
-    font-size: 17px;
+    font-size: 13pt;
 }
 

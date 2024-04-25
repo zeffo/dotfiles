@@ -15,7 +15,7 @@ window {
     background: linear-gradient(0.25turn, @pink, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender, @mauve);
     border-radius: 30px;
     font-family: Iosevka Pride;
-    font-size: 17px;
+    font-size: 13pt;
     box-shadow: none;
 }
 

@@ -25,7 +25,7 @@ eww daemon &
 
 # rgb
 sudo modprobe cdc-acm
-prismatik &
+sleep  10
 openrgb --startminimized -p MAIN0 &
 
 

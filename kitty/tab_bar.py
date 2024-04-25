@@ -19,17 +19,12 @@ opts = get_options()
 flavor = Flavour.mocha()
 fields = (
     "pink",
-    "mauve",
     "red",
-    "maroon",
     "peach",
     "yellow",
     "green",
-    "teal",
-    "sky",
-    "sapphire",
     "blue",
-    "lavender",
+    "mauve",
 )
 
 

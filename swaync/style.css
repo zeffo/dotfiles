@@ -2,7 +2,7 @@
 
 * {
   all: unset;
-  font-size: 16px;
+  font-size: 13pt;
   transition: 200ms;
 }
 
@@ -16,7 +16,7 @@
   /* background: linear-gradient(0.25turn, @pink, @mauve, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender); */
   color: @crust;
   padding: 0;
-  font-family: "UbuntuMono Nerd Font";
+  font-family: "Iosevka Pride";
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {

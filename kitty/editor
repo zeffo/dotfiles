@@ -5,4 +5,4 @@ launch --location=vsplit spotify_player
 resize_window wider 40
 launch --location=vsplit cava
 resize_window wider 50
-resize_window shorter 24
+resize_window shorter 22

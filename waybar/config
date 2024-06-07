@@ -31,11 +31,12 @@
             "3": "\uf121",
             "4": "\uf1bc",
             "5": "\uf075",
-            "6": "\uf004",
+            "6": "\uf005",
+            "7": "\uf004",
             "default": "\uf111"
         },
         "persistent-workspaces": {
-            "*": 6
+            "*": 7
         }
     },
     "custom/powermenu": {
@@ -85,7 +86,6 @@
         "dynamic-len": 30
     },
     "cava": {
-        "cava_config": "/home/aman/.config/cava/config",
         "framerate": 170,
         "autosens": 1,
         "bars": 10,

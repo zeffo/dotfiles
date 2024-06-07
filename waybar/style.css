@@ -1,164 +1,187 @@
 @import "./mocha.css";
 
 * {
-    font-family: "Space Mono", "IosevkaPride Nerd Font", monospace;
-	border-radius: 10px;
+  font-family: "Space Mono", monospace;
+  border-radius: 10px;
 }
 
 window#waybar {
-  background-color: transparent; 
+  background-color: transparent;
   color: @text;
 }
 
 @keyframes gradient {
-    to {
-        background-position: 200% center;
-    }
+  to {
+    background-position: 200% center;
+  }
 }
 
 #workspaces {
-    background: linear-gradient(45deg, @pink, @pink, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender, @mauve, @pink, @pink);
-    background-size: 200% auto;
-    animation: gradient 10s linear infinite;
-    padding: 2px 0.25em;
-    border: 2px solid @crust;
-    border-bottom: 6px solid @crust;
+  background: linear-gradient(
+    45deg,
+    @pink,
+    @pink,
+    @red,
+    @maroon,
+    @peach,
+    @yellow,
+    @green,
+    @teal,
+    @sky,
+    @sapphire,
+    @blue,
+    @lavender,
+    @mauve,
+    @pink,
+    @pink
+  );
+  background-size: 200% auto;
+  animation: gradient 10s linear infinite;
+  padding: 2px 0.25em;
+  border: 2px solid @crust;
+  border-bottom: 6px solid @crust;
 }
 
 #workspaces button {
-    /* padding: 0 14px 0 6px; */
-    padding: 0 10px 0 2px;
-    background: @base;
-    color: @mauve;
-    margin: 0.25em;
-    font-size: 12pt;
-    border: 2px solid @crust;
+  /* padding: 0 14px 0 6px; */
+  padding: 0 9px 0 2px;
+  background: @base;
+  color: @mauve;
+  margin: 0.25em;
+  font-size: 11pt;
+  border: 2px solid @crust;
 }
 
-
-#workspaces button:nth-child(4) {
-    padding: 0 10px 0 3px;
-}
+/* #workspaces button:nth-child(1) { */
+/*   padding: 0 9px 0 2px; */
+/* } */
+/**/
+/* #workspaces button:nth-child(3) { */
+/*   padding: 0 9px 0 2px; */
+/* } */
+/**/
+/* #workspaces button:nth-child(4) { */
+/*   padding: 0 6px 0 5px; */
+/* } */
+/**/
+/* #workspaces button:nth-child(6) { */
+/*   padding: 0 6px 0 5px; */
+/* } */
 
 #workspaces button.empty {
-    color: @overlay0;
+  color: @overlay0;
 }
 
 #workspaces button.visible {
-    color: @pink;
+  color: @pink;
 }
 
 #workspaces button.active {
-    color: @crust;
-    background: transparent;
+  color: @crust;
+  background: transparent;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
-    border-radius: 1em;
-    color: @text;
+  background-color: @red;
+  border-radius: 1em;
+  color: @text;
 }
 
 #workspaces button:hover {
-    color: @crust;
-    box-shadow: none;
-    background: transparent;
+  color: @crust;
+  box-shadow: none;
+  background: transparent;
 }
-
 
 #window {
-    color: @pink;
-    background-color: @mantle;
-    padding: 0 15px;
+  color: @pink;
+  background-color: @mantle;
+  padding: 0 15px;
 }
 
-
-#cpu{
-    background-color: @pink;
-    padding: 0 15px;
+#cpu {
+  background-color: @pink;
+  padding: 0 15px;
 }
 
-#temperature{
-    background-color: @red;
-    padding: 0 15px;
+#temperature {
+  background-color: @red;
+  padding: 0 15px;
 }
 
-#memory{
-    background-color: @maroon;
-    padding: 0 15px;
+#memory {
+  background-color: @maroon;
+  padding: 0 15px;
 }
 
 #mpris {
-    background-color: @peach;
-    padding: 0 15px;
-    min-width: 100px;
+  background-color: @peach;
+  padding: 0 15px;
+  min-width: 100px;
 }
 
 #cava {
-    background-color: @yellow;
-    padding: 0 15px;
+  background-color: @yellow;
+  padding: 0 15px;
 }
 
 #pulseaudio {
-    background-color: @green;
-    padding: 0 15px;
+  background-color: @green;
+  padding: 0 15px;
 }
 
 #bluetooth {
-    background-color: @teal;
-    padding: 0 15px;
+  background-color: @teal;
+  padding: 0 15px;
 }
 
 #network {
-    background-color: @sky;
-    padding: 0 22px 0 15px;
+  background-color: @sky;
+  padding: 0 22px 0 15px;
 }
 
 #tray {
-    min-width: 120px;
-    background-color: @sapphire;
-    padding: 0 15px; 
+  min-width: 120px;
+  background-color: @sapphire;
+  padding: 0 15px;
 }
 
 #tray menu {
-    background-color: @base;
-    color: @text;
+  background-color: @base;
+  color: @text;
 }
 
 #tray menu > *:hover {
-    background-color: @pink;
-    color: @base;
+  background-color: @pink;
+  color: @base;
 }
 
 #tray > .needs-attention {
-    border: 2px solid @red;
+  border: 2px solid @red;
 }
 
 #clock {
-    background-color: @blue;
-    padding: 0 18px 0 15px; 
+  background-color: @blue;
+  padding: 0 18px 0 15px;
 }
 
-
 #custom-swaync {
-    background-color: @lavender;
-    padding: 0 22px 0 15px;
+  background-color: @lavender;
+  padding: 0 22px 0 15px;
 }
 
 #custom-powermenu {
-    background-color: @mauve;
-    padding: 0 20px 0 15px;
-
+  background-color: @mauve;
+  padding: 0 20px 0 15px;
 }
 
 .modules-right > * > * {
-    margin: 0 0 0 7px;
-    border: 2px solid @base;
-    border-bottom: 6px solid @base;
+  margin: 0 0 0 7px;
+  border: 2px solid @base;
+  border-bottom: 6px solid @base;
 }
 
 .modules-right {
-    color: @base;
-    font-size: 13pt;
+  color: @base;
+  font-size: 13pt;
 }
-

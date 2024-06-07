@@ -25,7 +25,6 @@ eww daemon &
 
 # rgb
 sudo modprobe cdc-acm
-sleep  10
-openrgb --startminimized -p MAIN0 &
+glowworm &
 
 

@@ -2,7 +2,7 @@
 # pyright: reportGeneralTypeIssues=false
 
 from kitty.fast_data_types import Color, Screen, get_options
-from catppuccin import Flavour
+from catppuccin import PALETTE
 from kitty.tab_bar import (
     DrawData,
     ExtraData,
@@ -16,7 +16,7 @@ import random
 
 opts = get_options()
 
-flavor = Flavour.mocha()
+flavor = PALETTE.mocha.colors
 fields = (
     "pink",
     "red",
@@ -34,7 +34,11 @@ def cai(color):
     )
 
 
-colors = [Color(*getattr(flavor, field).rgb, alpha=2) for field in fields]
+colors = []
+for field in fields:
+    rgb = getattr(flavor, field).rgb
+    color = Color(rgb.r, rgb.g, rgb.b, alpha=2)
+    colors.append(color)
 
 
 powerline_symbols = {

@@ -3,8 +3,10 @@
 
 
 waybar &
-hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24
+hyprctl setcursor catppuccin-mocha-pink-cursors 24
 blueman-applet &
+
+wl-paste --watch cliphist store &
 
 # swaync
 killall swaync

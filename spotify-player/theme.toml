@@ -25,7 +25,7 @@ bright_yellow = "#F9E2AF"
 [themes.component_style]
 selection = { fg="#cba6f7", bg = "#313244", modifiers = ["Bold"] }
 playback_progress_bar = {fg = "#f38ba8", bg="#1E1E2E"}
-block_title = {fg="#1e1e2e", bg="#f5c2e7", modifiers=["Bold"]}
+block_title = {bg="#1e1e2e", fg="#f5c2e7", modifiers=["Bold"]}
 playback_track = {fg="#cba6f7", modifiers=["Bold"]}
 current_playing = {fg="#f9e2af", modifiers = ["Bold"]}
 border = {fg="#f5c2e7"}

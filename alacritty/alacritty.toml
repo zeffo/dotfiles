@@ -1,14 +1,12 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
 
 
 [font]
-normal = { family = "Iosevka Pride", style="Regular"}
-size = 13 
+normal = { family = "Iosevka Pride", style = "Regular" }
+size = 11
 
 [window]
-padding = { x=10, y=10 }
+padding = { x = 10, y = 10 }
 opacity = 0.98
 
-
+[general]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]

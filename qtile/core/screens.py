@@ -1,4 +1,4 @@
-from catppuccin import Colour
+from catppuccin import PALETTE
 from libqtile import bar, widget
 from libqtile.config import Screen
 from libqtile.lazy import lazy
@@ -37,7 +37,7 @@ class Builder:
         self.bar.append(widget)
 
     def add_widget(self, widget, *, append_divider: bool = True):
-        color: Colour = self._prev or next(self.colors)
+        color = self._prev or next(self.colors)
         widget.background = color.hex
         widget.foreground = palette.base.hex
 
@@ -48,7 +48,7 @@ class Builder:
             self._prev = next_color
             self.bar.extend(self.get_divider(color, next_color))
 
-    def get_divider(self, bg: Colour, fg: Colour):
+    def get_divider(self, bg, fg):
         return [
             widget.TextBox(text="  ", background=bg.hex, foreground=fg.hex),  # type: ignore
             widget.TextBox(  # type: ignore
@@ -89,7 +89,7 @@ bar0._add_widget(
 )
 bar0._add_widget(
     widget.TextBox(  # type: ignore
-        text="\uE0B0",
+        text="\ue0b0",
         foreground=palette.mantle.hex,
         background=palette.base.hex,
         padding=0,

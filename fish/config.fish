@@ -5,6 +5,7 @@ if status is-interactive
     set -x EDITOR nvim
     set -x BAT_THEME Catppuccin-mocha
 
+    alias ...="cd ../.."
     alias gitui="gitui -t mocha.ron"
     alias cd="z" 
     alias fox='firefox-developer-edition'
@@ -13,6 +14,7 @@ if status is-interactive
     alias pdf="termpdf.py"
     alias cat="bat"
     alias spire="spotify_player"
+    alias av="source .venv/bin/activate.fish"
 
     pokeget random --hide-name; echo;
 end

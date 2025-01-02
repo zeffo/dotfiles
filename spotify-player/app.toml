@@ -1,5 +1,5 @@
 theme = "Catppuccin-mocha"
-client_id = "65b708073fc0480ea92a077233ca87bd"
+client_id = "00f2564d102142fbb5d9229533aede9e"
 client_port = 8080
 playback_format = """
 {track} • {artists}
@@ -23,10 +23,7 @@ default_device = "spotify-player"
 
 [copy_command]
 command = "xclip"
-args = [
-    "-sel",
-    "c",
-]
+args = ["-sel", "c"]
 
 [device]
 name = "spotify-player"

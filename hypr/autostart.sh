@@ -29,6 +29,8 @@ eww daemon &
 sudo modprobe cdc-acm
 glowworm &
 
-openrgb -p MAIN0
+openrgb -p gay
+
+killall glowworm
 
 

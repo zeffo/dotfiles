@@ -29,6 +29,7 @@ fields = (
 
 
 def cai(color):
+    """color as int"""
     return int(
         "".join(["{:02x}".format(x) for x in (color.r, color.g, color.b, color.a)]), 16
     )

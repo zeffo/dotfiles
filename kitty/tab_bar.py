@@ -1,22 +1,43 @@
 # pyright: reportMissingImports=false
 # pyright: reportGeneralTypeIssues=false
 
-from kitty.fast_data_types import Color, Screen, get_options
-from catppuccin import PALETTE
-from kitty.tab_bar import (
-    DrawData,
-    ExtraData,
-    TabBarData,
-    as_rgb,
-    draw_tab_with_powerline,
-    draw_title,
-)
-from kitty.utils import color_as_int
 import random
+
+from kitty.fast_data_types import Color, Screen, get_options
+from kitty.tab_bar import (DrawData, ExtraData, TabBarData, as_rgb,
+                           draw_tab_with_powerline, draw_title)
+from kitty.utils import color_as_int
 
 opts = get_options()
 
-flavor = PALETTE.mocha.colors
+flavor = {
+    "rosewater": (245, 224, 220),
+    "flamingo": (242, 205, 205),
+    "pink": (245, 194, 231),
+    "mauve": (203, 166, 247),
+    "red": (243, 139, 168),
+    "maroon": (235, 160, 172),
+    "peach": (250, 179, 135),
+    "yellow": (249, 226, 175),
+    "green": (166, 227, 161),
+    "teal": (148, 226, 213),
+    "sky": (137, 220, 235),
+    "sapphire": (116, 199, 236),
+    "blue": (137, 180, 250),
+    "lavender": (180, 190, 254),
+    "text": (205, 214, 244),
+    "subtext 1": (186, 194, 222),
+    "subtext 0": (166, 173, 200),
+    "overlay 2": (147, 153, 178),
+    "overlay 1": (127, 132, 156),
+    "overlay 0": (108, 112, 134),
+    "surface 2": (88, 91, 112),
+    "surface 1": (69, 71, 90),
+    "surface 0": (49, 50, 68),
+    "base": (30, 30, 46),
+    "mantle": (24, 24, 37),
+    "crust": (17, 17, 27),
+}
 fields = (
     "pink",
     "red",
@@ -37,8 +58,7 @@ def cai(color):
 
 colors = []
 for field in fields:
-    rgb = getattr(flavor, field).rgb
-    color = Color(rgb.r, rgb.g, rgb.b, alpha=2)
+    color = Color(*flavor[field], alpha=2)
     colors.append(color)
 
 

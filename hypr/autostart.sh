@@ -3,7 +3,7 @@
 
 
 waybar &
-hyprctl setcursor catppuccin-mocha-pink-cursors 24
+hyprctl setcursor catppuccin-mocha-pink-cursors 32 # for some reason, hyprcursor 32 == gtk 24
 blueman-applet &
 
 wl-paste --watch cliphist store &

@@ -2,7 +2,7 @@
 
 * {
   font-family: "Space Mono", monospace;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 window#waybar {
@@ -37,7 +37,7 @@ window#waybar {
   );
   background-size: 200% auto;
   animation: gradient 10s linear infinite;
-  padding: 2px 0.25em;
+  padding: 2px 4px;
   border: 2px solid @crust;
   border-bottom: 6px solid @crust;
 }

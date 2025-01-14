@@ -1,6 +1,7 @@
 theme = "Catppuccin-mocha"
-client_id = "00f2564d102142fbb5d9229533aede9e"
-client_port = 8080
+client_id = "a42365a56b104c84878c9b46b29b41a9" # spotify connect device
+# client_id = "65b708073fc0480ea92a077233ca87bd" # web app device
+# client_port = 8080
 playback_format = """
 {track} • {artists}
 {album}
@@ -19,15 +20,16 @@ playback_window_width = 4
 enable_media_control = true
 enable_streaming = "Always"
 enable_cover_image_cache = true
-default_device = "spotify-player"
+default_device = "spire"
 
 [copy_command]
 command = "xclip"
 args = ["-sel", "c"]
 
 [device]
-name = "spotify-player"
+name = "spire"
 device_type = "speaker"
+autoplay = true
 volume = 70
 bitrate = 320
 audio_cache = false

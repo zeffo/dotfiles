@@ -1,45 +1,66 @@
 # pyright: reportMissingImports=false
 # pyright: reportGeneralTypeIssues=false
+import random
 
 from kitty.fast_data_types import Color, Screen, get_options
-from catppuccin import Flavour
-from kitty.tab_bar import (
-    DrawData,
-    ExtraData,
-    TabBarData,
-    as_rgb,
-    draw_tab_with_powerline,
-    draw_title,
-)
+from kitty.tab_bar import DrawData, ExtraData, TabBarData, as_rgb, draw_title
 from kitty.utils import color_as_int
-import random
+
+# from catppuccin import PALETTE
+
 
 opts = get_options()
 
-flavor = Flavour.mocha()
-fields = (
-    "pink",
-    "mauve",
-    "red",
-    "maroon",
-    "peach",
-    "yellow",
-    "green",
-    "teal",
-    "sky",
-    "sapphire",
-    "blue",
-    "lavender",
-)
+flavor = {
+    "rosewater": (245, 224, 220),
+    "flamingo": (242, 205, 205),
+    "pink": (245, 194, 231),
+    "mauve": (203, 166, 247),
+    "red": (243, 139, 168),
+    "maroon": (235, 160, 172),
+    "peach": (250, 179, 135),
+    "yellow": (249, 226, 175),
+    "green": (166, 227, 161),
+    "teal": (148, 226, 213),
+    "sky": (137, 220, 235),
+    "sapphire": (116, 199, 236),
+    "blue": (137, 180, 250),
+    "lavender": (180, 190, 254),
+    "text": (205, 214, 244),
+    "subtext 1": (186, 194, 222),
+    "subtext 0": (166, 173, 200),
+    "overlay 2": (147, 153, 178),
+    "overlay 1": (127, 132, 156),
+    "overlay 0": (108, 112, 134),
+    "surface 2": (88, 91, 112),
+    "surface 1": (69, 71, 90),
+    "surface 0": (49, 50, 68),
+    "base": (30, 30, 46),
+    "mantle": (24, 24, 37),
+    "crust": (17, 17, 27),
+}
 
 
 def cai(color):
+    """color as int"""
     return int(
         "".join(["{:02x}".format(x) for x in (color.r, color.g, color.b, color.a)]), 16
     )
 
 
-colors = [Color(*getattr(flavor, field).rgb, alpha=2) for field in fields]
+colors = []
+fields = (
+    "pink",
+    "red",
+    "peach",
+    "yellow",
+    "green",
+    "blue",
+    "mauve",
+)
+for field in fields:
+    color = Color(*flavor[field], alpha=2)
+    colors.append(color)
 
 
 powerline_symbols = {

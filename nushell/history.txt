@@ -1,0 +1,72 @@
+config nu
+ls
+clear
+config nu
+exit
+clear
+ls
+theme
+clear
+nu --help
+ls
+$theme
+$theme.pink
+ls
+clear
+exit
+cd /media
+clear
+ls
+clear
+char --help
+hello world!
+clear
+ls
+ansi help
+ansi --help
+hello world!
+clear
+cd ~/.config/
+clear
+ls
+cd fish
+clea
+ansi --help
+c.ear
+clear
+ls
+atuin --help
+ls
+clear
+hello world!
+clear
+ls
+clear
+spire
+cava
+clear
+cd /media/sicsr/
+ls
+cd php/
+l
+ls
+clear
+ls
+cat laravel.md
+ls
+cd ..
+ls
+cd ..
+cd chronicler/
+ls
+cd chronicler/
+ls
+cat app.py
+bat app.py
+clear
+config nu
+cd ~/.config/
+git branch
+git add nushell/
+git status
+git add nushell/*

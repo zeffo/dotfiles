@@ -1,0 +1,8 @@
+layout splits
+launch fish
+launch --location=hsplit lavat -c magenta -k red
+launch --location=vsplit spotify_player  
+resize_window wider 30
+launch --location=vsplit cava
+resize_window wider 20
+resize_window shorter 16

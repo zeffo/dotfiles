@@ -51,6 +51,8 @@ $env.PROMPT_COMMAND = {
   ] | str join
 }
 $env.PROMPT_INDICATOR = " "
+$env.PROMPT_INDICATOR_VI_NORMAL = " "
+$env.PROMPT_INDICATOR_VI_INSERT = " "
 
 def in_git_repo [] {
   (do -i { git rev-parse --abbrev-ref HEAD } | complete | get stderr | is-empty)
@@ -62,10 +64,7 @@ $env.PROMPT_COMMAND_RIGHT = {
       (ansi reset)
       (ansi { fg: $theme.pink attr: b })
       (char -u e0b6)
-      (ansi { fg: $theme.base bg: $theme.pink})
-      (char -u e725)
       (ansi {fg: $theme.crust bg: $theme.pink })
-      (char space)
       (git branch --show-current)
       (ansi {fg: $theme.pink bg: $theme.crust})
       (char -u e0b4)
@@ -79,13 +78,19 @@ $env.config.show_banner = false
 
 let MENU_STYLE = {
   text: $theme.pink,
-  selected_text: {fg: $theme.base, bg: $theme.pink}, 
+  selected_text: {fg: $theme.base, bg: $theme.pink, attr: b}, 
   description_text: {fg: $scheme.virtual_text, attr: i},
-  selected_match_text: {fg: $theme.base, bg: $theme.pink, attr: bu},
+  selected_match_text: {fg: $theme.base, bg: $theme.pink, attr: bui},
   match_text: $theme.mauve
 } 
 
 $env.config = {
+  edit_mode: "vi"
+  buffer_editor: "nvim"
+  cursor_shape: {
+    vi_insert: "line"
+    vi_normal: "block"
+  }
   history: {
     sync_on_enter: true,
     file_format: "sqlite"
@@ -98,6 +103,9 @@ $env.config = {
       marker: " "
       type: {
         layout: columnar
+        columns: 4               
+        col_width: 10             
+        col_padding: 2
       }
       style: $MENU_STYLE
     }

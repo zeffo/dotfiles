@@ -127,32 +127,32 @@ let zoxide_completer = {|spans|
   $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
 }
 
-let path_completer = {|spans|
-  let test = fish --command $'complete "--do-complete=($spans | str join " ")"'
-    | from tsv --flexible --noheaders --no-infer
-    | rename value description
-
-  if ($test | is-empty) == true {
-    do $zoxide_completer $spans
-  } else {
-    $test
-  }
-}
-
 let fish_completer = {|spans|
-  let test = fish --command $'complete "--do-complete=($spans | str join " ")"'
+  fish --command $'complete "--do-complete=($spans | str join " ")"'
     | from tsv --flexible --noheaders --no-infer
     | rename value description
 }
+
+# Aggregate fish and zoxide results 
+let path_completer = {|spans|
+  let fish = do $fish_completer $spans
+  let zoxide = do $zoxide_completer $spans
+  [
+    ...$fish
+    ...$zoxide
+  ]
+}
+
+
 
 $env.config.completions.external = {
   enable: true
-  max_results: 100
+  max_results: 10
   completer: {|spans|
     match $spans.0 {
       cd => $path_completer
       _ => $fish_completer
-    } | do $in $spans
+    } | do $in $spans 
   }
 }
 

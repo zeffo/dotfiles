@@ -1,5 +1,5 @@
 layout splits
-launch fish
+launch nu
 launch --location=hsplit lavat -c magenta -k red
 launch --location=vsplit spotify_player  
 resize_window wider 40

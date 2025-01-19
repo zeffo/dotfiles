@@ -146,15 +146,22 @@ $env.config.completions.external = {
 
 # Aliases
 
+def l [...args] {
+  let args = if $args == [] {
+    ["."]
+  } else {
+    $args
+  }
+  ls -l ...$args | select name type size user mode modified created target | sort-by type name -i
+}
+
 alias gitui = gitui -t mocha.ron
 alias fox = firefox-developer-edition
 alias grep = rg
 alias cat = bat
 alias spire = spotify_player
 alias cd = z
-
-def lsg [] { ls | sort-by type name -i}
-alias ls = lsg
+alias ls = l
 
 # Environment
 

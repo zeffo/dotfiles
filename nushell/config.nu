@@ -124,11 +124,23 @@ $env.config = {
 
 # Completers
 let zoxide_completer = {|spans|
-    $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
+  $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
+}
+
+let path_completer = {|spans|
+  let test = fish --command $'complete "--do-complete=($spans | str join " ")"'
+    | from tsv --flexible --noheaders --no-infer
+    | rename value description
+
+  if ($test | is-empty) == true {
+    do $zoxide_completer $spans
+  } else {
+    $test
+  }
 }
 
 let fish_completer = {|spans|
-    fish --command $'complete "--do-complete=($spans | str join " ")"'
+  let test = fish --command $'complete "--do-complete=($spans | str join " ")"'
     | from tsv --flexible --noheaders --no-infer
     | rename value description
 }
@@ -138,22 +150,14 @@ $env.config.completions.external = {
   max_results: 100
   completer: {|spans|
     match $spans.0 {
-        cd => $zoxide_completer
-        _ => $fish_completer
-    } | do $in $spans}
+      cd => $path_completer
+      _ => $fish_completer
+    } | do $in $spans
+  }
 }
 
 
 # Aliases
-
-def l [...args] {
-  let args = if $args == [] {
-    ["."]
-  } else {
-    $args
-  }
-  ls -l ...$args | select name type size user mode modified created target | sort-by type name -i
-}
 
 alias gitui = gitui -t mocha.ron
 alias fox = firefox-developer-edition
@@ -161,7 +165,6 @@ alias grep = rg
 alias cat = bat
 alias spire = spotify_player
 alias cd = z
-alias ls = l
 
 # Environment
 

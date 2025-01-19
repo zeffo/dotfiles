@@ -38,10 +38,10 @@ let scheme = {
   filepath: $theme.yellow
 }
 $env.config.color_config = {
-  separator: { fg: $theme.mauve attr: b }
+  separator: { fg: $scheme.virtual_text attr: b }
   leading_trailing_space_bg: { fg: $theme.lavender attr: u }
   header: { fg: $theme.pink attr: b }
-  row_index: $scheme.virtual_text
+  row_index: $theme.rosewater
   record: $theme.text
   list: $theme.text
   hints: $scheme.virtual_text

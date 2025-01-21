@@ -165,12 +165,14 @@ alias grep = rg
 alias cat = bat
 alias spire = spotify_player
 alias cd = z
+alias v = nvim
 
 # Environment
 
 path add "~/.cargo/bin"
 path add "/usr/local/bin"
 path add "~/go/bin"
+$env.BAT_THEME = "Catppuccin-mocha"
 
 # Misc
 

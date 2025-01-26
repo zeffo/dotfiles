@@ -53,6 +53,7 @@ $env.PROMPT_COMMAND = {
 $env.PROMPT_INDICATOR = " "
 $env.PROMPT_INDICATOR_VI_NORMAL = " "
 $env.PROMPT_INDICATOR_VI_INSERT = " "
+$env.PROMPT_MULTILINE_INDICATOR = "~  "
 
 def in_git_repo [] {
   (do -i { git rev-parse --abbrev-ref HEAD } | complete | get stderr | is-empty)
@@ -156,6 +157,22 @@ $env.config.completions.external = {
   }
 }
 
+# Custom
+
+def rand_file_name [] {
+  let randuuid = random uuid
+  return $'/tmp/($randuuid).md'
+}
+
+def sp [fp?: string ] {
+  if ($fp | describe) == "nothing" {
+    let path = rand_file_name
+    nvim $path
+    rm $path
+  } else { 
+    nvim $fp
+  }
+}
 
 # Aliases
 

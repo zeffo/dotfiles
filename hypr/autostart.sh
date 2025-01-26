@@ -31,6 +31,5 @@ glowworm &
 
 openrgb -p gay
 
-killall glowworm
 
 

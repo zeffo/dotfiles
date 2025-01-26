@@ -4,6 +4,6 @@ insensitive=true
 allow_images=true
 width=1000
 height=600
-term=alacritty
+term=kitty
 hide_scroll=true
 location=center

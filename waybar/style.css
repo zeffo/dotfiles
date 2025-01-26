@@ -1,7 +1,7 @@
 @import "./mocha.css";
 
 * {
-  font-family: "Space Mono", monospace;
+  font-family: "Space Mono", "Symbols NerdFont Mono", monospace;
   border-radius: 15px;
 }
 
@@ -37,37 +37,19 @@ window#waybar {
   );
   background-size: 200% auto;
   animation: gradient 10s linear infinite;
-  padding: 2px 4px;
   border: 2px solid @crust;
   border-bottom: 6px solid @crust;
 }
 
 #workspaces button {
-  /* padding: 0 14px 0 6px; */
-  padding: 0 9px 0 2px;
+  /* padding: 0 0.5em 0 0.1em; */
+  padding: 0.1em 0.31em 0 0.35em;
   background: @base;
   color: @mauve;
   margin: 0.25em;
-  font-size: 11pt;
+  /* font-size: 14pt; */
   border: 2px solid @crust;
 }
-
-/* #workspaces button:nth-child(1) { */
-/*   padding: 0 9px 0 2px; */
-/* } */
-/**/
-/* #workspaces button:nth-child(3) { */
-/*   padding: 0 9px 0 2px; */
-/* } */
-/**/
-/* #workspaces button:nth-child(4) { */
-/*   padding: 0 6px 0 5px; */
-/* } */
-/**/
-/* #workspaces button:nth-child(6) { */
-/*   padding: 0 6px 0 5px; */
-/* } */
-
 #workspaces button.empty {
   color: @overlay0;
 }

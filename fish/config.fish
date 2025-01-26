@@ -10,7 +10,7 @@ if status is-interactive
     alias cd="z" 
     alias fox='firefox-developer-edition'
     alias ls='eza --icons=always --no-quotes --group-directories-first --hyperlink'
-    alias grep='ag'
+    alias grep='rg'
     alias pdf="termpdf.py"
     alias cat="bat"
     alias spire="spotify_player"

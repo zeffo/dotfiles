@@ -1,7 +1,7 @@
 @import "./mocha.css";
 
 * {
-  font-family: "Space Mono", "Symbols NerdFont Mono", monospace;
+  font-family: "Recursive Mono Linear Static", "Symbols NerdFont Mono", monospace;
   border-radius: 15px;
 }
 
@@ -153,5 +153,5 @@ window#waybar {
 
 .modules-right {
   color: @base;
-  font-size: 13pt;
+  font-size: 12pt;
 }

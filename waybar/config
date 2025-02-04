@@ -65,9 +65,9 @@
         "tooltip-format-disconnected": "Disconnected"
     },
     "bluetooth": {
-        "format": "\uf294 {status}",
-        "format-connected": "\uf294 {device_alias}",
-        "format-connected-battery": "\uf294 {device_alias} {device_battery_percentage}%",
+        "format": "{status} \uf294",
+        "format-connected": "{device_alias} \uf294",
+        "format-connected-battery": "{device_alias} {device_battery_percentage}% \uf294",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

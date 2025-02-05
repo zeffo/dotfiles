@@ -1,9 +1,14 @@
 @import '/home/aman/.config/wofi/mocha.css';
 
+* {
+    font-family: Iosevka Pride;
+    font-size: 11pt;
+}
+
 window {
     margin: 0px;
     background-color: @base;
-    border-radius: 30px;
+    border-radius: 0px;
     border: 4px solid @crust;
     border-bottom: 10px solid @crust;
 }
@@ -14,8 +19,7 @@ window {
     color: @crust;
     background: linear-gradient(0.25turn, @pink, @red, @maroon, @peach, @yellow, @green, @teal, @sky, @sapphire, @blue, @lavender, @mauve);
     border-radius: 30px;
-    font-family: Iosevka Pride;
-    font-size: 13pt;
+
     box-shadow: none;
 }
 
@@ -43,7 +47,6 @@ window {
     margin: 5px;
     border: none;
     color: @text; 
-    font-family: SpaceMono Nerd Font;
 } 
 
 #entry:selected {
@@ -52,11 +55,8 @@ window {
 }
 
 #entry:selected * {
-    background-color: transparent; 
+    background-color: @surface0; 
     outline: none;
     color: @pink;
-    font-size: 17;
     font-weight: bold;
-    font-style: italic;
-
 }

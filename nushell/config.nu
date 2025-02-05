@@ -20,6 +20,7 @@
 use std/util "path add"
 
 source ~/.zoxide.nu
+source ~/.local/share/atuin/init.nu
 source ~/.config/nushell/theme.nu
 
 $env.PROMPT_COMMAND = {
@@ -121,7 +122,36 @@ $env.config = {
       style: $MENU_STYLE
     }
   ]
+  keybindings: [
+    {
+      name: complete_history_hint_word
+      modifier: control
+      keycode: space
+      mode: [vi_normal vi_insert]
+      event: {send: HistoryHintWordComplete}
+    }
+    {
+      name: complete_history_hint
+      modifier: control_alt
+      keycode: space
+      mode: [vi_normal vi_insert]
+      event: {send: HistoryHintComplete}
+    }
+  ]
 }
+
+$env.config = (
+    $env.config | upsert keybindings (
+        $env.config.keybindings
+        | append {
+            name: atuin
+            modifier: control
+            keycode: char_r
+            mode: [emacs, vi_normal, vi_insert]
+            event: { send: executehostcommand cmd: (_atuin_search_cmd) }
+        }
+    )
+)
 
 # Completers
 let zoxide_completer = {|spans|

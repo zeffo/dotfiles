@@ -1,12 +1,17 @@
 
 
 [font]
-normal = { family = "Iosevka Pride", style = "Regular" }
-size = 11
+normal = { family = "Cozette", style = "Regular" }
+size = 15
 
 [window]
 padding = { x = 10, y = 10 }
-opacity = 0.98
+opacity = 1
 
 [general]
 import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+[keyboard]
+bindings = [
+   { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+]

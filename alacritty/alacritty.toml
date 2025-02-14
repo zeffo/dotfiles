@@ -1,8 +1,8 @@
 
 
 [font]
-normal = { family = "Cozette", style = "Regular" }
-size = 15
+normal = { family = "Iosevka Pride Light", style = "Regular" }
+size = 13
 
 [window]
 padding = { x = 10, y = 10 }

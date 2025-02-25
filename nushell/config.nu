@@ -204,6 +204,18 @@ def sp [fp?: string ] {
   }
 }
 
+def --env av [] {
+  let venv = ls -af | where name =~ .venv
+  if (($venv | is-not-empty) and (($venv | first | get type) == dir)) {
+    let path = ($venv | first | get name)
+    nu -e $"overlay use ($path)/bin/activate.nu"
+  } else {
+    let poetry = poetry env activate | complete
+    if ($poetry | get exit_code) == 0 {
+      nu -e ($poetry | get stdout)
+    }
+  }
+}
 # Aliases
 
 alias gitui = gitui -t mocha.ron

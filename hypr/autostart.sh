@@ -13,11 +13,8 @@ swaync &
 
 swww kill
 swww-daemon &
-swww img ~/.config/hypr/wallpapers/blahaj.png -o DP-2 --transition-fps 255 
-wallpapers=("pixelmountain.gif" "pixeltrain.gif" "sakura.gif") 
-size=${#wallpapers[@]}
-index=$(($RANDOM % $size))
-swww img ~/.config/hypr/wallpapers/${wallpapers[$index]} -o HDMI-A-1 --transition-fps 255
+swww img ~/.config/hypr/wallpapers/sakuracat.gif -o DP-2 -f Nearest
+swww img ~/.config/hypr/wallpapers/cat.gif -o HDMI-A-1 -f Nearest
 
 # eww
 eww daemon &

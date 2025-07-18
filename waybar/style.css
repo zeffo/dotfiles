@@ -1,0 +1,160 @@
+@import "./mocha.css";
+
+* {
+  font-family: "Recursive Mono Linear Static", "Symbols NerdFont Mono", monospace;
+  border-radius: 10px;
+  font-size: 11pt;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+@keyframes gradient {
+
+  50% {
+    background: linear-gradient(
+      45deg,
+      @pink,
+      @red,
+      @peach
+    )
+  }
+
+  100% {
+    background: linear-gradient(
+      30deg,
+      @pink,
+      @red,
+      @peach
+    );
+  }
+
+}
+
+#workspaces {
+  background: linear-gradient(
+    @pink,
+    @red,
+    @peach
+  );
+  /* animation: gradient 10s linear infinite; */
+  border: 2px solid @crust;
+  border-bottom: 6px solid @crust;
+  padding: 0 0.2em
+}
+
+#workspaces button {
+  /* padding: 0 0.5em 0 0.1em; */
+  /* padding: 0.1em 0.38em 0 0.43em; */
+  padding: 0 0.3em 0 0.35em;
+  margin: 0.25em;
+  color: @crust;
+  background: transparent;
+  font-weight: 400;
+}
+#workspaces button.empty {
+  color: @surface2;
+}
+
+#workspaces button.visible {
+  color: @crust;
+  font-weight: 800;
+}
+
+#workspaces button.active {
+  color: @crust;
+  font-weight: 900;
+  font-style: italic;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  border-radius: 1em;
+  color: @text;
+}
+
+#workspaces button:hover {
+  box-shadow: 0 0 transparent;
+}
+
+#window {
+  color: @pink;
+  background-color: @mantle;
+}
+
+#cpu {
+  background-color: @mauve;
+}
+
+#temperature {
+  background-color: @red
+}
+
+#memory {
+  background-color: @peach;
+}
+
+#mpris {
+  background-color: @mauve;
+  min-width: 100px;
+}
+
+#cava {
+  background-color: @pink;
+}
+
+#pulseaudio {
+  background-color: @peach;
+}
+
+#bluetooth {
+  background-color: @red;
+}
+
+#network {
+  background-color: @pink;
+}
+
+#tray {
+  min-width: 120px;
+  background-color: @peach;
+}
+
+#tray menu {
+  background-color: @base;
+  color: @text;
+}
+
+#tray menu > *:hover {
+  background-color: @pink;
+  color: @base;
+}
+
+#tray > .needs-attention {
+  border: 2px solid @red;
+}
+
+#clock {
+  background-color: @mauve;
+}
+
+#custom-swaync {
+  background-color: @red;
+}
+
+#custom-powermenu {
+  background-color: @pink;
+}
+
+.modules-right > * > * {
+  margin: 0 0 0 7px;
+  border: 2px solid @base;
+  border-bottom: 6px solid @base;
+  padding: 0 12px;
+}
+
+.modules-right {
+  color: @base;
+}

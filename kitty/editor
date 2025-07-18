@@ -1,0 +1,8 @@
+layout splits
+launch nu
+launch --location=hsplit lavat -c magenta -k red
+launch --location=vsplit spotify_player  
+resize_window wider 40
+launch --location=vsplit cava
+resize_window wider 50
+resize_window shorter 22

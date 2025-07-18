@@ -1,0 +1,51 @@
+@import '/home/aman/.config/eww/mocha.scss';
+
+* {
+    all: unset;
+    font-family: "Recursive Mono Linear Static";
+    font-size: 12pt;
+    border-radius: 12px;
+}
+
+
+.powermenu-window {
+    background: linear-gradient(0.25turn, $mauve, $pink, $red, $peach); 
+    border: 3px solid $crust;
+    border-bottom: 7px solid $crust;
+    border-radius: 10px;
+    color: $crust;
+    padding: 10px;
+}
+
+.powermenu-button {
+    color: $crust;
+    border: 2px solid $crust;
+    border-bottom: 6px solid $crust;
+    margin: 5px;
+    margin-top: 10px;
+    min-width: 40px;
+    min-height: 30px;
+}
+
+.powermenu-lockscreen-button {
+    // background: linear-gradient(0.25turn, $pink, $mauve);
+    padding-right: 3px;
+}
+
+.powermenu-logout-button {
+    // background: linear-gradient(0.25turn, $red, $pink);
+}
+
+.powermenu-poweroff-button {
+    // background: linear-gradient(0.25turn, $pink, $red);
+    padding-right: 5px;
+}
+
+.powermenu-reboot-button {
+    // background: linear-gradient(0.25turn, $red, $peach);
+    padding-left: 4px;
+}
+                     // (powermenu-lockscreen-button)
+                     // (powermenu-logout-button)
+                     // (powermenu-poweroff-button)
+                     // (powermenu-reboot-button)

@@ -206,6 +206,13 @@ def syu [] {
   topgrade --only cargo firmware go rustup system tldr vim 
 }
 
+def compress [quality: int] {
+   wl-paste | magick - -format PNG -quality $quality - | wl-copy
+}
+
+def pick [] {
+  hyprpicker -aq
+}
 
 def c-complete [context: string] {
   let target = $context | split words | skip 1

@@ -70,9 +70,9 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background-color: @red;
-  border-radius: 1em;
-  color: @text;
+  background: linear-gradient(@mauve);
+  box-shadow: inset -1px -1px @crust, inset 1px 1px @crust;
+  color: @crust;
 }
 
 #workspaces button:hover {

@@ -71,7 +71,7 @@ window#waybar {
 
 #workspaces button.urgent {
   background: linear-gradient(@mauve);
-  box-shadow: inset -1px -1px @crust, inset 1px 1px @crust;
+  box-shadow: inset -1px -1px @crust, inset 1px 1px @crust, inset 1px -1px @crust, inset -1px 1px @crust;
   color: @crust;
 }
 

@@ -203,27 +203,27 @@ def --env av [] {
 }
 
 def syu [] {
-  topgrade --only cargo firmware go rustup system tldr vim 
+  topgrade --only cargo firmware go rustup system tldr vim
 }
 
 def compress [quality: int] {
    wl-paste | magick - -format PNG -quality $quality - | wl-copy
 }
 
-def pick [] {
-  hyprpicker -aq
-}
 
 def c-complete [context: string] {
-  let target = $context | split words | skip 1
+  let target = $context | split row " " | skip 1
   mut results = []
   let search = zoxide query -l -s --exclude $env.PWD -- ...$target | lines | str trim --right --left | first 20
-  for $row in (ls | where type == dir) {
+  for $row in (ls -a | where type == dir) {
     $results = $results | append {value: ($row | get name)}
   }
   for $row in $search {
     let sp = $row | split row " " -n 2
     $results = $results | append {value: ($sp | get 1), description: ($sp | get 0)}
+  }
+  for $row in (glob --no-file $"($target | str join ' ')*") {
+    $results = $results | append {value: $row}
   }
 
   {
@@ -237,10 +237,9 @@ def c-complete [context: string] {
   }
 }
 
-export def --env c [path: string@c-complete] {
-  z $path
+export def --env c [...path: string@c-complete] {
+  z ($path | str join " ")
 }
-
 
 
 # Aliases
@@ -250,9 +249,10 @@ alias fox = firefox-developer-edition
 alias grep = rg
 alias cat = bat
 alias spire = spotify_player
-alias v = nvim
 alias tclock = tclock -c magenta
 alias fetch = fastfetch
+alias erd = erd -H
+alias v = nvim .
 
 # Environment
 
@@ -260,9 +260,10 @@ path add "~/.cargo/bin"
 path add "/usr/local/bin"
 path add "~/go/bin"
 path add "~/.local/bin"
-$env.BAT_THEME = "Catppuccin-mocha"
+$env.BAT_THEME = "Catppuccin Mocha"
 $env.EDITOR = "nvim"
 $env.TERMINAL = "kitty"
+$env.TERM = "kitty"
 
 # Misc
 

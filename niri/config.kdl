@@ -9,7 +9,7 @@
 input {
 
 
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="50%"
 
     keyboard {
         xkb {
@@ -73,6 +73,12 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -113,11 +119,6 @@ output "DP-2" {
     position x=1920 y=0
 
     backdrop-color "#11111b"
-
-    // hot-corners {
-    //     off
-    // }
-
 }
 
 output "HDMI-A-1" {
@@ -162,6 +163,9 @@ cursor {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
+
+    empty-workspace-above-first
+
     // Set gaps around windows in logical pixels.
     gaps 10
 

@@ -33,6 +33,24 @@ window#waybar {
 
 }
 
+#window {
+  background: linear-gradient(
+    @pink,
+    @red,
+    @peach
+  );
+  /* animation: gradient 10s linear infinite; */
+  border: 2px solid @crust;
+  border-bottom: 6px solid @crust;
+  padding: 6px 10px;
+  min-height: 18px;
+}
+
+window #window {
+  color: @crust;
+}
+
+
 #workspaces {
   background: linear-gradient(
     @pink,
@@ -70,7 +88,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background: linear-gradient(@mauve);
+  background-color: @mauve;
   box-shadow: inset -1px -1px @crust, inset 1px 1px @crust, inset 1px -1px @crust, inset -1px 1px @crust;
   color: @crust;
 }
@@ -105,7 +123,11 @@ window#waybar {
   background-color: @pink;
 }
 
-#pulseaudio {
+/* #pulseaudio { */
+/*   background-color: @peach; */
+/* } */
+
+#wireplumber {
   background-color: @peach;
 }
 
@@ -142,6 +164,10 @@ window#waybar {
 
 #custom-swaync {
   background-color: @red;
+}
+
+#custom-fanmenu {
+  background-color: @peach;
 }
 
 #custom-powermenu {

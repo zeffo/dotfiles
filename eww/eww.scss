@@ -49,3 +49,48 @@
                      // (powermenu-logout-button)
                      // (powermenu-poweroff-button)
                      // (powermenu-reboot-button)
+
+.fanmenu-window {
+    background: linear-gradient(0.25turn, $mauve, $pink, $red, $peach); 
+    border: 3px solid $crust;
+    border-bottom: 7px solid $crust;
+    border-radius: 10px;
+    color: $crust;
+    padding: 10px;
+}
+
+.fan-speed-button {
+    color: $crust;
+    border: 2px solid $crust;
+    border-bottom: 6px solid $crust;
+    margin: 5px;
+    margin-top: 10px;
+    min-width: 40px;
+    min-height: 30px;
+}
+
+.fan-special {
+    color: $crust;
+    border: 2px solid $crust;
+    border-bottom: 6px solid $crust;
+    margin: 5px;
+    margin-top: 10px;
+    min-width: 40px;
+    min-height: 30px;
+    padding-right: 5px;
+}   
+
+.fan-light-slider {
+    color: $crust;
+    border: 2px solid $crust;
+    border-bottom: 6px solid $crust;
+    margin: 5px;
+    margin-top: 10px;
+    min-width: 40px;
+    min-height: 30px;
+}
+
+.fan-light-slider slider {
+    border: 5px solid $crust;
+    margin: 0 5px;
+}

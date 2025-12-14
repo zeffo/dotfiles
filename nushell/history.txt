@@ -1,0 +1,38 @@
+zoxide init
+zoxide init nushell
+config nu
+chsh 
+ls
+ls --help
+ls
+help def
+av
+c ~/.config/nushell
+cd ~/.config/nushell
+nvim .
+cd ~/.config/nushell
+ls
+cd ~/.local/share/
+cd atuin/
+ls
+c nu
+config nu
+let aa = ['a', 'b']
+$aa
+$aa.len()
+length($aa)
+length
+length $aa
+length --help
+$aa | length
+str join
+let a = ['a', 'b']
+str join --help
+$a | str join " "
+nvim $nu.config-path
+str join --help
+str join --help " "
+!true
+not true
+any
+ls -a

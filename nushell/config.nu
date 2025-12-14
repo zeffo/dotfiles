@@ -207,35 +207,57 @@ def syu [] {
 }
 
 def compress [quality: int] {
-   wl-paste | magick - -format PNG -quality $quality - | wl-copy
+  wl-paste | magick - -format PNG -quality $quality - | wl-copy
 }
 
 
 def c-complete [context: string] {
-  let target = $context | split row " " | skip 1
-  mut results = []
-  let search = zoxide query -l -s --exclude $env.PWD -- ...$target | lines | str trim --right --left | first 20
-  for $row in (ls -a | where type == dir) {
-    $results = $results | append {value: ($row | get name)}
+  let target = ($context | split row " " | skip 1)
+
+  if ($target | is-empty) or (($target | get 0 | str trim) == "") {
+    return null
   }
-  for $row in $search {
-    let sp = $row | split row " " -n 2
-    $results = $results | append {value: ($sp | get 1), description: ($sp | get 0)}
-  }
-  for $row in (glob --no-file $"($target | str join ' ')*") {
-    $results = $results | append {value: $row}
+
+  let zox = (
+    zoxide query -l -s --exclude $env.PWD -- ...$target
+    | lines
+    | first 20
+    | each {|row|
+        let sp = ($row | str trim | split row " " -n 2)
+        {
+          value: ($sp | get 1 | str replace $"($env.PWD)/" "")
+          description: ($sp | get 0)
+        }
+      }
+  )
+
+  let done = ($zox | get value)
+
+  let local = (
+    ls -a
+    | where type == dir
+    | get name
+    | where {|n| not ($n in $done) }
+    | each {|n| { value: $n } }
+  )
+
+  let results = ($zox | append $local | uniq-by value)
+
+  if ($results | is-empty) {
+    return null
   }
 
   {
     options: {
-      case_sensitive: false,
-      completion_algorithm: prefix,
-      positional: false,
-      sort: false,
-    },
+      case_sensitive: false
+      completion_algorithm: fuzzy
+      positional: false
+      sort: false
+    }
     completions: $results
   }
 }
+
 
 export def --env c [...path: string@c-complete] {
   z ($path | str join " ")

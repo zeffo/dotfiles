@@ -210,22 +210,39 @@ def compress [quality: int] {
   wl-paste | magick - -format PNG -quality $quality - | wl-copy
 }
 
-
 def c-complete [context: string] {
-  let target = ($context | split row " " | skip 1)
+  let parts = ($context | split row " " | skip 1)
+  let contracted = $parts | get 0 | str starts-with "~"
+  let expanded = $parts | get 0 | str starts-with $env.HOME
+  let target = (
+    if ($contracted) {
+      $parts | str replace "~" $env.HOME
+    } else {
+      $parts
+    }
+  ) | get 0
 
-  if ($target | is-empty) or (($target | get 0 | str trim) == "") {
+  # retract if contracted
+  let rifc = {|p| 
+    if ($expanded) {
+      $p | str replace "~" $env.HOME
+    } else {
+      $p | str replace $env.HOME "~"
+    } 
+  }
+
+  if ($target | is-empty) or (($target | str trim) == "") {
     return null
   }
 
   let zox = (
-    zoxide query -l -s --exclude $env.PWD -- ...$target
+    zoxide query -l -s --exclude $env.PWD -- $target
     | lines
     | first 20
     | each {|row|
         let sp = ($row | str trim | split row " " -n 2)
         {
-          value: ($sp | get 1 | str replace $"($env.PWD)/" "")
+          value: (do $rifc ($sp | get 1))
           description: ($sp | get 0)
         }
       }
@@ -233,15 +250,27 @@ def c-complete [context: string] {
 
   let done = ($zox | get value)
 
-  let local = (
-    ls -a
+  let get_ls = {|path|     
+    ls -af $path
     | where type == dir
     | get name
     | where {|n| not ($n in $done) }
-    | each {|n| { value: $n } }
+    | each {|n| { value: (do $rifc $n) } }
+  }
+
+  let local = (
+    do $get_ls "."
   )
 
-  let results = ($zox | append $local | uniq-by value)
+  let remote = (
+    try {
+      do $get_ls ($target | path split | slice 0..-1 | path join) 
+    } catch {
+      []
+    }
+  )
+
+  let results = ($zox | append $remote | append $local | uniq-by value)
 
   if ($results | is-empty) {
     return null

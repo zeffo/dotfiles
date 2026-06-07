@@ -1,7 +1,5 @@
 (defpoll uptime :interval "1s" "uptime -p | sed 's/up //g'")
-
-
-
+(defvar fan "/scripts/fan.nu")
 
 (defwidget powermenu-button [label onclick ?class]
   (button :class "powermenu-button ${class}"
@@ -87,11 +85,11 @@
       :halign "center"
       :orientation "h"
       (button :class "fan-special"
-        :onclick ""
+        :onclick "${EWW_CONFIG_DIR}/${fan} power on &"
         ""
       )
       (button :class "fan-special"
-        :onclick ""
+        :onclick "${EWW_CONFIG_DIR}/${fan} power off &"
         ""
       )
     )
@@ -102,37 +100,28 @@
       (
         fan-speed-button 
           :label "1"
-          :onclick ""
+          :onclick "${EWW_CONFIG_DIR}/${fan} speed 1 &"
       )
       (
         fan-speed-button 
           :label "2"
-          :onclick ""
+          :onclick "${EWW_CONFIG_DIR}/${fan} speed 2 &"
       )
       (
         fan-speed-button 
           :label "3"
-          :onclick ""
+          :onclick "${EWW_CONFIG_DIR}/${fan} speed 3 &"
       )
       (
         fan-speed-button 
           :label "4"
-          :onclick ""
+          :onclick "${EWW_CONFIG_DIR}/${fan} speed 4 &"
       )
       (
         fan-speed-button 
           :label "5"
-          :onclick ""
+          :onclick "${EWW_CONFIG_DIR}/${fan} speed 5 &"
       )
-    )
-    (scale
-      :orientation "h"
-      :class "fan-light-slider"
-      :marks "-"
-      :draw-value false
-      :value 50
-      :min 0
-      :max 100
     )
   )
 )

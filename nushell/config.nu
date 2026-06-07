@@ -202,8 +202,13 @@ def --env av [] {
   }
 }
 
+def fan [...args] {
+  let dev = atmbrg scan-one
+  atmbrg --device $dev ...$args
+}
+
 def syu [] {
-  topgrade --only cargo firmware go rustup system tldr vim
+  topgrade --only cargo firmware go rustup system tldr custom_commands
 }
 
 def compress [quality: int] {
@@ -292,6 +297,17 @@ export def --env c [...path: string@c-complete] {
   z ($path | str join " ")
 }
 
+export def v [...args: string] {
+  if ($args | length) == 0 {
+    nvim .
+  } else {
+    nvim ...$args
+  }
+}
+
+export def --env sv [...paths: string] {
+  sudo -e ($paths | str join " ")
+}
 
 # Aliases
 
@@ -303,7 +319,6 @@ alias spire = spotify_player
 alias tclock = tclock -c magenta
 alias fetch = fastfetch
 alias erd = erd -H
-alias v = nvim .
 
 # Environment
 

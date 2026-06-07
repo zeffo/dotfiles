@@ -103,7 +103,7 @@ window #window {
 }
 
 #cpu {
-  background-color: @mauve;
+  background-color: @pink;
 }
 
 #temperature {
@@ -111,11 +111,11 @@ window #window {
 }
 
 #memory {
-  background-color: @peach;
+  background-color: @rosewater;
 }
 
 #mpris {
-  background-color: @mauve;
+  background-color: @flamingo;
   min-width: 100px;
 }
 
@@ -128,20 +128,20 @@ window #window {
 /* } */
 
 #wireplumber {
-  background-color: @peach;
-}
-
-#bluetooth {
   background-color: @red;
 }
 
-#network {
+#bluetooth {
   background-color: @pink;
+}
+
+#network {
+  background-color: @maroon;
 }
 
 #tray {
   min-width: 120px;
-  background-color: @peach;
+  background-color: @flamingo;
 }
 
 #tray menu {
@@ -159,7 +159,7 @@ window #window {
 }
 
 #clock {
-  background-color: @mauve;
+  background-color: @pink;
 }
 
 #custom-swaync {
@@ -167,11 +167,11 @@ window #window {
 }
 
 #custom-fanmenu {
-  background-color: @peach;
+  background-color: @maroon;
 }
 
 #custom-powermenu {
-  background-color: @pink;
+  background-color: @rosewater;
 }
 
 .modules-right > * > * {

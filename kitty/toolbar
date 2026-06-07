@@ -1,0 +1,7 @@
+layout splits
+launch lavat -c magenta -k red
+resize_window narrower 40
+launch --location=vsplit spotify_player  
+resize_window wider 40 
+launch --location=vsplit cava
+resize_window shorter 100
